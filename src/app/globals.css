@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-dota-red: #C23A2B;
+  --color-dota-green: #5B9A41;
+  --color-dota-blue: #3A6BC5;
+  --color-dota-gold: #D4A853;
+  --color-dota-bg: #0D1117;
+  --color-dota-surface: #161B22;
+  --color-dota-border: #30363D;
+  --color-dota-text: #E6EDF3;
+  --color-dota-muted: #8B949E;
+  --color-dota-accent: #58A6FF;
+
+  --color-background: var(--color-dota-bg);
+  --color-foreground: var(--color-dota-text);
+  --color-card: var(--color-dota-surface);
+  --color-border: var(--color-dota-border);
+  --color-muted: var(--color-dota-muted);
+  --color-accent: var(--color-dota-accent);
+
+  --font-sans: "Inter", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-dota-bg);
+  color: var(--color-dota-text);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* DOTA2-style scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dota-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dota-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dota-muted);
+}
+
+/* Attribute colors */
+.text-str { color: #C23A2B; }
+.text-agi { color: #5B9A41; }
+.text-int { color: #3A6BC5; }
+.text-uni { color: #D4A853; }
+
+.bg-str { background-color: #C23A2B; }
+.bg-agi { background-color: #5B9A41; }
+.bg-int { background-color: #3A6BC5; }
+.bg-uni { background-color: #D4A853; }
+
+/* Win rate colors */
+.win-rate-high { color: #3FB950; }
+.win-rate-mid { color: #D4A853; }
+.win-rate-low { color: #C23A2B; }
+
+/* Gradient backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #1C2333 100%);
+}
+.card-hover {
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  border-color: var(--color-dota-accent);
+  transform: translateY(-2px);
+}
+
+/* Tippy-like tooltip styles */
+.tooltip-content {
+  background: #1C2333;
+  border: 1px solid var(--color-dota-border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}

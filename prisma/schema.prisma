@@ -1,0 +1,274 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Hero {
+  id                Int      @id
+  name              String   @unique
+  localizedNameZh   String
+  localizedNameEn   String
+  primaryAttribute  String
+  attackType        String
+  roles             String[]
+  imageIcon         String?
+  imagePortrait     String?
+  versionIntroduced Int?
+  isActive          Boolean  @default(true)
+
+  heroMeta       HeroMeta[]
+  guides         Guide[]
+  news           News[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Item {
+  id              Int      @id
+  name            String   @unique
+  localizedNameZh String
+  localizedNameEn String
+  cost            Int
+  isRecipe        Boolean  @default(false)
+  isSecretShop    Boolean  @default(false)
+  isUpgraded      Boolean  @default(false)
+  components      Int[]
+  imageIcon       String?
+  descriptionZh   String?
+  tier            Int?
+  isActive        Boolean  @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Ability {
+  id              Int      @id @default(autoincrement())
+  heroId          Int
+  name            String
+  localizedNameZh String?
+  localizedNameEn String?
+  descriptionZh   String?
+  slot            Int
+  isUltimate      Boolean  @default(false)
+  imageIcon       String?
+
+  hero Hero @relation(fields: [heroId], references: [id])
+
+  @@unique([heroId, slot])
+}
+
+model GamePatch {
+  id          Int      @id @default(autoincrement())
+  version     String   @unique
+  releaseDate DateTime
+  summary     String?
+  isCurrent   Boolean  @default(false)
+
+  guides        Guide[]
+  metaSnapshots MetaSnapshot[]
+
+  createdAt DateTime @default(now())
+}
+
+model MetaSnapshot {
+  id          Int      @id @default(autoincrement())
+  patchId     Int
+  rankBracket String   @default("all")
+  snapshotDate DateTime
+  dataSource   String  @default("opendota")
+
+  patch         GamePatch       @relation(fields: [patchId], references: [id])
+  heroMeta      HeroMeta[]
+  heroMatchupsA HeroMatchup[]   @relation("HeroA")
+  heroMatchupsB HeroMatchup[]   @relation("HeroB")
+
+  createdAt DateTime @default(now())
+}
+
+model HeroMeta {
+  id           Int    @id @default(autoincrement())
+  snapshotId   Int
+  heroId       Int
+  pickRate     Float
+  banRate      Float  @default(0)
+  winRate      Float
+  totalMatches Int    @default(0)
+  avgKills     Float?
+  avgDeaths    Float?
+  avgAssists   Float?
+  avgGPM       Float?
+  avgXPM       Float?
+  avgLastHits  Float?
+  avgDuration  Int?
+  tierRank     Int?
+
+  snapshot MetaSnapshot @relation(fields: [snapshotId], references: [id])
+  hero     Hero         @relation(fields: [heroId], references: [id])
+
+  @@unique([snapshotId, heroId])
+  @@index([heroId])
+}
+
+model HeroMatchup {
+  id           Int    @id @default(autoincrement())
+  snapshotId   Int
+  heroIdA      Int
+  heroIdB      Int
+  gamesPlayed  Int    @default(0)
+  heroAWinRate Float
+  advantage    Float  @default(0)
+
+  snapshot MetaSnapshot @relation(fields: [snapshotId], references: [id])
+  heroA    Hero         @relation("HeroA", fields: [heroIdA], references: [id])
+  heroB    Hero         @relation("HeroB", fields: [heroIdB], references: [id])
+
+  @@unique([snapshotId, heroIdA, heroIdB])
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  role          String    @default("user")
+  steamId       String?   @unique
+  bio           String?
+
+  guides     Guide[]
+  comments   Comment[]
+  favorites  UserFavorite[]
+  accounts   Account[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refreshToken      String? @db.Text
+  accessToken       String? @db.Text
+  expiresAt         Int?
+  tokenType         String?
+  scope             String?
+  idToken           String? @db.Text
+  sessionState      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Guide {
+  id              String   @id @default(cuid())
+  heroId          Int
+  patchId         Int
+  authorId        String
+  title           String
+  slug            String   @unique
+  summary         String
+  content         String   @db.Text
+  role            String?
+  difficulty      String?
+  laningItems     Int[]
+  coreItems       Int[]
+  situationalItems Int[]
+  skillBuild      Json?
+  talentChoices   Json?
+  viewCount       Int      @default(0)
+  likeCount       Int      @default(0)
+  status          String   @default("draft")
+  versionTag      String?
+
+  hero   Hero      @relation(fields: [heroId], references: [id])
+  patch  GamePatch @relation(fields: [patchId], references: [id])
+  author User      @relation(fields: [authorId], references: [id])
+  comments Comment[]
+  favorites UserFavorite[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([heroId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  guideId   String
+  authorId  String
+  content   String   @db.Text
+  parentId  String?
+
+  guide   Guide     @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  author  User      @relation(fields: [authorId], references: [id])
+  parent  Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies Comment[] @relation("CommentReplies")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserFavorite {
+  id      String @id @default(cuid())
+  userId  String
+  guideId String
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  guide Guide @relation(fields: [guideId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, guideId])
+}
+
+model News {
+  id          String   @id @default(cuid())
+  sourceName  String
+  sourceUrl   String
+  title       String
+  content     String   @db.Text
+  contentFull String?  @db.Text
+  imageUrl    String?
+  category    String   @default("news")
+  tags        String[]
+  language    String   @default("zh")
+  heroId      Int?
+  publishedAt DateTime
+  slug        String   @unique
+  isFeatured  Boolean  @default(false)
+  viewCount   Int      @default(0)
+  status      String   @default("pending")
+
+  hero Hero? @relation(fields: [heroId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@index([publishedAt])
+  @@index([language, status])
+}
+
+model NewsSource {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  url       String
+  type      String
+  category  String   @default("news")
+  language  String   @default("zh")
+  isActive  Boolean  @default(true)
+  lastFetchedAt DateTime?
+  fetchIntervalMinutes Int @default(30)
+
+  createdAt DateTime @default(now())
+}
