@@ -5,8 +5,8 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { getAllHeroesWithMeta, getAllItems } from "@/lib/data";
-import { MOCK_GUIDES, MOCK_NEWS } from "@/lib/mock-data";
+import { getAllHeroesWithMeta, getAllItems, getLatestNews } from "@/lib/data";
+import { MOCK_GUIDES } from "@/lib/mock-data";
 import { Search } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -57,9 +57,10 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 }
 
 async function SearchResults({ query }: { query: string }) {
-  const [heroes, items] = await Promise.all([
+  const [heroes, items, { items: newsItems }] = await Promise.all([
     getAllHeroesWithMeta("api"),
     getAllItems("api"),
+    getLatestNews("api"),
   ]);
 
   // Search heroes
@@ -86,7 +87,7 @@ async function SearchResults({ query }: { query: string }) {
   );
 
   // Search news
-  const matchedNews = MOCK_NEWS.filter(
+  const matchedNews = newsItems.filter(
     (n) =>
       n.title.toLowerCase().includes(query) ||
       n.content.toLowerCase().includes(query) ||

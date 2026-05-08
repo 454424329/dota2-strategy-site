@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MOCK_NEWS } from "@/lib/mock-data";
+import { getLatestNews } from "@/lib/data";
 import { formatTimeAgo } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -18,7 +18,9 @@ const categoryLabels: Record<string, string> = {
   news: "新闻",
 };
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const { items: allNews } = await getLatestNews("api");
+
   return (
     <Container className="py-8">
       <PageHeader
@@ -27,7 +29,7 @@ export default function NewsPage() {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {MOCK_NEWS.map((news) => (
+        {allNews.map((news) => (
           <Link key={news.id} href={`/news/${news.slug}`}>
             <Card className="h-full card-hover">
               <CardHeader>

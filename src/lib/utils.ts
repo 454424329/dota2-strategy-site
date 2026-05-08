@@ -42,20 +42,24 @@ export function getWinRateColor(winRate: number): string {
   return "win-rate-low";
 }
 
+const STEAM_CDN = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react";
+
 export function getHeroImageUrl(heroName: string, type: "icon" | "portrait" = "icon"): string {
-  const base = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes";
+  if (heroName.startsWith("http")) return heroName;
   if (type === "portrait") {
-    return `${base}/${heroName}_vert.png`;
+    return `${STEAM_CDN}/heroes/${heroName}_vert.png`;
   }
-  return `${base}/${heroName}.png`;
+  return `${STEAM_CDN}/heroes/${heroName}.png`;
 }
 
 export function getItemImageUrl(itemName: string): string {
-  return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${itemName}.png`;
+  if (itemName.startsWith("http")) return itemName.replace(/\.png\.png$/, ".png");
+  return `${STEAM_CDN}/items/${itemName}.png`;
 }
 
 export function getAbilityImageUrl(abilityName: string): string {
-  return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/${abilityName}.png`;
+  if (abilityName.startsWith("http")) return abilityName;
+  return `${STEAM_CDN}/abilities/${abilityName}.png`;
 }
 
 export function slugify(text: string): string {

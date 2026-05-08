@@ -278,13 +278,9 @@ export const MOCK_ITEMS: ItemData[] = [
   { id: 73, name: "item_aegis", localizedNameZh: "不朽之守护", localizedNameEn: "Aegis of the Immortal", cost: 0, isRecipe: false, isSecretShop: false, components: [], imageIcon: "aegis", descriptionZh: "死亡后5秒内原地复活。", tier: null, isActive: true },
 ];
 
-function makeImageUrl(baseName: string, type: "hero" | "item" | "ability", format: "png" | "jpg" = "png"): string {
-  const urls: Record<string, string> = {
-    hero: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes",
-    item: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items",
-    ability: "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities",
-  };
-  return `${urls[type]}/${baseName}.${format}`;
+function makeImageUrl(baseName: string, _type: "hero" | "item" | "ability", _format: "png" | "jpg" = "png"): string {
+  // Return plain filename only — getItemImageUrl/getHeroImageUrl/getAbilityImageUrl will build the full URL
+  return baseName;
 }
 
 export function generateMockMeta(hero: HeroData): HeroMetaData {

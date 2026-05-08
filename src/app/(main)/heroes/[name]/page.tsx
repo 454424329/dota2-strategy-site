@@ -23,6 +23,8 @@ import {
   getWinRateColor,
   formatPercent,
   formatNumber,
+  getHeroImageUrl,
+  getItemImageUrl,
 } from "@/lib/utils";
 import {
   TrendingUp,
@@ -38,11 +40,6 @@ import {
 interface HeroPageProps {
   params: Promise<{ name: string }>;
 }
-
-const heroImageUrl = (icon: string) =>
-  `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${icon}.png`;
-const itemImageUrl = (icon: string) =>
-  `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${icon}.png`;
 
 const phaseLabels: Record<string, string> = {
   starting: "出门装",
@@ -91,7 +88,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
         {/* Hero Image */}
         <div className="shrink-0">
           <img
-            src={heroImageUrl(hero.imagePortrait)}
+            src={getHeroImageUrl(hero.imagePortrait)}
             alt={hero.localizedNameZh}
             className="w-32 h-32 md:w-48 md:h-48 rounded-lg object-cover border border-dota-border"
           />
@@ -206,7 +203,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
                               className="flex items-center gap-2 rounded border border-dota-border bg-dota-bg px-2 py-1 text-sm hover:border-dota-accent transition-colors"
                             >
                               <img
-                                src={itemImageUrl(item.itemIcon)}
+                                src={getItemImageUrl(item.itemIcon)}
                                 alt={item.itemNameZh}
                                 className="w-6 h-6 rounded"
                                 loading="lazy"
@@ -250,7 +247,7 @@ export default async function HeroPage({ params }: HeroPageProps) {
                       >
                         <div className="flex items-center gap-3">
                           <img
-                            src={itemImageUrl(item.itemIcon)}
+                            src={getItemImageUrl(item.itemIcon)}
                             alt={item.itemNameZh}
                             className="w-10 h-8 rounded object-cover"
                             loading="lazy"

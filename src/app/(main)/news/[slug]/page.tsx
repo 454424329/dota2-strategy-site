@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { MOCK_NEWS } from "@/lib/mock-data";
+import { getLatestNews } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
@@ -20,7 +20,8 @@ const categoryLabels: Record<string, string> = {
 
 export default async function NewsDetailPage({ params }: NewsPageProps) {
   const { slug } = await params;
-  const news = MOCK_NEWS.find((n) => n.slug === slug);
+  const { items: allNews } = await getLatestNews("api");
+  const news = allNews.find((n) => n.slug === slug);
   if (!news) notFound();
 
   return (

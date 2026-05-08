@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { getAllHeroesWithMeta } from "@/lib/data";
-import { MOCK_NEWS, MOCK_GUIDES } from "@/lib/mock-data";
+import { getAllHeroesWithMeta, getLatestNews } from "@/lib/data";
+import { MOCK_GUIDES } from "@/lib/mock-data";
 import { formatDate, formatTimeAgo } from "@/lib/utils";
 import {
   ArrowRight,
@@ -16,8 +16,6 @@ import {
   Trophy,
 } from "lucide-react";
 
-const featuredNews = MOCK_NEWS.filter((n) => n.isFeatured);
-const latestNews = MOCK_NEWS.slice(0, 3);
 const latestGuides = MOCK_GUIDES.filter((g) => g.status === "published").slice(
   0,
   3
@@ -30,10 +28,16 @@ const categoryLabels: Record<string, string> = {
 };
 
 export default async function HomePage() {
-  const heroesWithMeta = await getAllHeroesWithMeta("api");
+  const [heroesWithMeta, { items: newsItems }] = await Promise.all([
+    getAllHeroesWithMeta("api"),
+    getLatestNews("api"),
+  ]);
   const sortedByWinRate = [...heroesWithMeta]
     .sort((a, b) => (b.meta?.winRate ?? 0) - (a.meta?.winRate ?? 0))
     .slice(0, 12);
+
+  const featuredNews = newsItems.filter((n) => n.isFeatured);
+  const latestNews = newsItems.slice(0, 3);
   return (
     <div>
       {/* Hero Section */}
