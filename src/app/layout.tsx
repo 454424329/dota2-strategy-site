@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "DOTA2攻略站提供实时的英雄胜率、装备选择、克制关系等Meta数据，以及深度的英雄攻略、版本分析和最新DOTA2新闻资讯。",
   keywords: ["DOTA2", "攻略", "英雄", "胜率", "装备", "Meta", "刀塔"],
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://dota2-strategy.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://dota2-strategy-site.vercel.app"
   ),
   openGraph: {
     type: "website",
