@@ -6,8 +6,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { getAllHeroesWithMeta, getLatestNews } from "@/lib/data";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { MOCK_GUIDES } from "@/lib/mock-data";
-import { formatDate, formatTimeAgo } from "@/lib/utils";
+import { formatDate, formatTimeAgo, getHeroImageUrl } from "@/lib/utils";
 import {
   ArrowRight,
   TrendingUp,
@@ -211,11 +212,10 @@ export default async function HomePage() {
                   <Card className="card-hover">
                     <CardContent className="py-3">
                       <div className="flex items-center gap-4">
-                        <img
-                          src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${guide.hero.imageIcon}.png`}
+                        <SafeImage
+                          src={getHeroImageUrl(guide.hero.imageIcon)}
                           alt={guide.hero.localizedNameZh}
                           className="w-10 h-10 rounded object-cover shrink-0"
-                          loading="lazy"
                         />
                         <div className="min-w-0 flex-1">
                           <h3 className="text-sm font-medium text-dota-text truncate">

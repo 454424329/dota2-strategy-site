@@ -4,8 +4,9 @@ import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { getAllHeroesWithMeta } from "@/lib/data";
-import { formatPercent } from "@/lib/utils";
+import { formatPercent, getHeroImageUrl } from "@/lib/utils";
 import { TrendingUp, TrendingDown, BarChart3, Users } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -104,11 +105,10 @@ export default async function MetaPage() {
                   className="flex items-center gap-3 py-2 hover:bg-dota-bg transition-colors -mx-2 px-2 rounded"
                 >
                   <span className="text-sm text-dota-muted w-4">{i + 1}</span>
-                  <img
-                    src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.imageIcon}.png`}
+                  <SafeImage
+                    src={getHeroImageUrl(hero.imageIcon)}
                     alt={hero.localizedNameZh}
                     className="w-8 h-8 rounded object-cover shrink-0"
-                    loading="lazy"
                   />
                   <span className="text-sm text-dota-text flex-1">
                     {hero.localizedNameZh}
@@ -141,11 +141,10 @@ export default async function MetaPage() {
                   <span className="text-sm text-dota-muted w-4">
                     {totalHeroes - 4 + i}
                   </span>
-                  <img
-                    src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.imageIcon}.png`}
+                  <SafeImage
+                    src={getHeroImageUrl(hero.imageIcon)}
                     alt={hero.localizedNameZh}
                     className="w-8 h-8 rounded object-cover shrink-0"
-                    loading="lazy"
                   />
                   <span className="text-sm text-dota-text flex-1">
                     {hero.localizedNameZh}

@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getItemById } from "@/lib/data";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { getItemImageUrl } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 
@@ -28,7 +29,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
 
       <div className="flex flex-col md:flex-row gap-6 mb-8">
         <div className="shrink-0">
-          <img
+          <SafeImage
             src={getItemImageUrl(item.imageIcon)}
             alt={item.localizedNameZh}
             className="w-24 h-16 md:w-32 md:h-20 rounded-lg object-cover border border-dota-border"

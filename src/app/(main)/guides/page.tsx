@@ -4,8 +4,9 @@ import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { MOCK_GUIDES } from "@/lib/mock-data";
-import { formatDate } from "@/lib/utils";
+import { formatDate, getHeroImageUrl } from "@/lib/utils";
 import { BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,11 +33,10 @@ export default function GuidesPage() {
               <Card className="h-full card-hover">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <img
-                      src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${guide.hero.imageIcon}.png`}
+                    <SafeImage
+                      src={getHeroImageUrl(guide.hero.imageIcon)}
                       alt={guide.hero.localizedNameZh}
                       className="w-12 h-12 rounded object-cover shrink-0"
-                      loading="lazy"
                     />
                     <div className="min-w-0">
                       <h3 className="font-semibold text-dota-text text-sm line-clamp-2">

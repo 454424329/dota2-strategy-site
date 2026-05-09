@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { HeroWinRateBadge } from "@/components/hero/HeroWinRateBadge";
 import { HeroRoleTags } from "@/components/hero/HeroRoleTags";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { getHeroByName } from "@/lib/data";
 import { generateMockAbilities } from "@/lib/mock-data";
 import {
@@ -87,8 +88,9 @@ export default async function HeroPage({ params }: HeroPageProps) {
       <div className="flex flex-col md:flex-row gap-6 mb-8">
         {/* Hero Image */}
         <div className="shrink-0">
-          <img
-            src={getHeroImageUrl(hero.imagePortrait)}
+          <SafeImage
+            src={getHeroImageUrl(hero.imagePortrait, "portrait")}
+            fallback={getHeroImageUrl(hero.imageIcon)}
             alt={hero.localizedNameZh}
             className="w-32 h-32 md:w-48 md:h-48 rounded-lg object-cover border border-dota-border"
           />
@@ -202,11 +204,10 @@ export default async function HeroPage({ params }: HeroPageProps) {
                               href={`/items/${item.itemId}`}
                               className="flex items-center gap-2 rounded border border-dota-border bg-dota-bg px-2 py-1 text-sm hover:border-dota-accent transition-colors"
                             >
-                              <img
+                              <SafeImage
                                 src={getItemImageUrl(item.itemIcon)}
                                 alt={item.itemNameZh}
                                 className="w-6 h-6 rounded"
-                                loading="lazy"
                               />
                               <span className="text-dota-text">
                                 {item.itemNameZh}
@@ -246,11 +247,10 @@ export default async function HeroPage({ params }: HeroPageProps) {
                         className="flex items-center justify-between rounded border border-dota-border bg-dota-bg p-3"
                       >
                         <div className="flex items-center gap-3">
-                          <img
+                          <SafeImage
                             src={getItemImageUrl(item.itemIcon)}
                             alt={item.itemNameZh}
                             className="w-10 h-8 rounded object-cover"
-                            loading="lazy"
                           />
                           <div>
                             <p className="text-sm font-medium text-dota-text">
@@ -347,11 +347,10 @@ export default async function HeroPage({ params }: HeroPageProps) {
                 <CardContent className="py-4">
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
-                      <img
+                      <SafeImage
                         src={ability.imageIcon}
                         alt={ability.localizedNameZh}
                         className="w-12 h-12 rounded border border-dota-border"
-                        loading="lazy"
                       />
                       <p className="text-xs text-center text-dota-muted mt-1">
                         {ability.isUltimate ? "R" : ["Q", "W", "E"][ability.slot - 1]}
@@ -464,11 +463,10 @@ function MatchupRow({
       className="flex items-center justify-between rounded border border-dota-border bg-dota-bg p-2 hover:border-dota-accent transition-colors"
     >
       <div className="flex items-center gap-2">
-        <img
+        <SafeImage
           src={matchup.heroIcon}
           alt={matchup.heroNameZh}
           className="w-8 h-8 rounded object-cover"
-          loading="lazy"
         />
         <span className="text-sm text-dota-text">{matchup.heroNameZh}</span>
       </div>

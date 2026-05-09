@@ -61,17 +61,22 @@ interface OpenDotaTeam {
 
 type RevalidateOption = number | false;
 
+const FETCH_TIMEOUT = 3000;
+
 async function fetchOpenDota<T>(
   path: string,
   revalidate: RevalidateOption = 3600,
 ): Promise<T | null> {
+  const url = `${OPENDOTA_BASE}${path}`;
   try {
-    const url = `${OPENDOTA_BASE}${path}`;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
     const res = await fetch(url, {
       next: typeof revalidate === "number" ? { revalidate } : undefined,
-      // OpenDota needs this header for CORS
       headers: { Accept: "application/json" },
+      signal: controller.signal,
     });
+    clearTimeout(timeoutId);
 
     if (!res.ok) {
       if (res.status === 429) {
@@ -82,7 +87,11 @@ async function fetchOpenDota<T>(
 
     return res.json();
   } catch (err) {
-    console.error(`[OpenDota] Fetch failed: ${path}`, err);
+    if (err instanceof DOMException && err.name === "AbortError") {
+      console.warn(`[OpenDota] Timeout after ${FETCH_TIMEOUT}ms: ${path}`);
+    } else {
+      console.error(`[OpenDota] Fetch failed: ${path}`, err);
+    }
     return null;
   }
 }

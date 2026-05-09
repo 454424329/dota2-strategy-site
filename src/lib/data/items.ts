@@ -2,7 +2,24 @@ import { cache } from "react";
 import type { ItemData } from "@/types/dota";
 import type { DataSource } from "./types";
 import { fetchItems } from "./opendota";
-import { MOCK_ITEMS } from "@/lib/mock-data";
+import { MOCK_ITEMS } from "./items-mock";
+
+interface OpenDotaItemConst {
+  id: number;
+  dname?: string;
+  cost?: number | null;
+  img?: string;
+  lore?: string;
+  notes?: string;
+  behavior?: string;
+  mc?: boolean;
+  hc?: boolean;
+  cd?: number | null;
+  qual?: string;
+  components?: string[] | null;
+  created?: boolean;
+  charges?: boolean;
+}
 
 export const getAllItems = cache(async (source: DataSource = "api") => {
   if (source === "mock") {
@@ -13,38 +30,41 @@ export const getAllItems = cache(async (source: DataSource = "api") => {
   if (!data) return MOCK_ITEMS;
 
   // Map OpenDota constants to our ItemData format
-  // Only include items that exist in our mock data (has Chinese name + description)
   const items: ItemData[] = [];
   for (const [key, val] of Object.entries(data)) {
     if (typeof val !== "object" || !val || !("id" in val)) continue;
-    const item = val as { id: number; name: string; cost: number; recipe: number };
-    if (!item.id || !item.name || item.name.startsWith("recipe_")) continue;
+    const item = val as OpenDotaItemConst;
+    const dname = item.dname || "";
+    if (!item.id || !dname || dname.startsWith("Recipe:")) continue;
 
-    // Find matching mock item for Chinese name
-    const mockItem = MOCK_ITEMS.find((m) => m.name === `item_${item.name}`);
+    // Parse image icon name from img path
+    const imgMatch = item.img?.match(/\/items\/(.+)\.png/) || [];
+    const imgName = imgMatch[1] || key;
+
+    const mockItem = MOCK_ITEMS.find((m) => m.name === `item_${key}`);
+    const cost = typeof item.cost === "number" && item.cost > 0 ? item.cost : 0;
+
     if (mockItem) {
-      items.push({ ...mockItem, cost: item.cost });
+      items.push({ ...mockItem, cost: cost || mockItem.cost });
     } else {
       items.push({
         id: item.id,
-        name: `item_${item.name}`,
-        localizedNameZh: item.name
-          .replace(/_/g, " ")
-          .replace(/\b\w/g, (c) => c.toUpperCase()),
-        localizedNameEn: item.name,
-        cost: item.cost,
-        isRecipe: item.recipe === 1,
-        isSecretShop: false,
+        name: `item_${key}`,
+        localizedNameZh: dname,
+        localizedNameEn: dname,
+        cost,
+        isRecipe: dname.includes("Recipe"),
+        isSecretShop: item.qual === "secret_shop",
         components: [],
-        imageIcon: item.name,
-        descriptionZh: "",
+        imageIcon: imgName,
+        descriptionZh: item.lore || "",
         tier: null,
         isActive: true,
       });
     }
   }
 
-  return items;
+  return items.length > 0 ? items : MOCK_ITEMS;
 });
 
 export async function getItemById(id: number, source: DataSource = "api") {

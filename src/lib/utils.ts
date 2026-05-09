@@ -42,24 +42,27 @@ export function getWinRateColor(winRate: number): string {
   return "win-rate-low";
 }
 
-const STEAM_CDN = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react";
+const STEAM_CDN_IMAGES = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react";
+const STEAM_CDN_VIDEOS = "https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react";
 
 export function getHeroImageUrl(heroName: string, type: "icon" | "portrait" = "icon"): string {
   if (heroName.startsWith("http")) return heroName;
+  // Strip _vert suffix if present (from mock data imagePortrait values)
+  const baseName = heroName.replace(/_vert$/, "");
   if (type === "portrait") {
-    return `${STEAM_CDN}/heroes/${heroName}_vert.png`;
+    return `${STEAM_CDN_VIDEOS}/heroes/renders/${baseName}.png`;
   }
-  return `${STEAM_CDN}/heroes/${heroName}.png`;
+  return `${STEAM_CDN_IMAGES}/heroes/${baseName}.png`;
 }
 
 export function getItemImageUrl(itemName: string): string {
   if (itemName.startsWith("http")) return itemName.replace(/\.png\.png$/, ".png");
-  return `${STEAM_CDN}/items/${itemName}.png`;
+  return `${STEAM_CDN_IMAGES}/items/${itemName}.png`;
 }
 
 export function getAbilityImageUrl(abilityName: string): string {
   if (abilityName.startsWith("http")) return abilityName;
-  return `${STEAM_CDN}/abilities/${abilityName}.png`;
+  return `${STEAM_CDN_IMAGES}/abilities/${abilityName}.png`;
 }
 
 export function slugify(text: string): string {

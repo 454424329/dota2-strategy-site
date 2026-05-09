@@ -5,8 +5,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { MOCK_GUIDES } from "@/lib/mock-data";
-import { formatDate } from "@/lib/utils";
+import { formatDate, getHeroImageUrl } from "@/lib/utils";
 import { ArrowLeft, ThumbsUp, Eye, Clock } from "lucide-react";
 
 interface GuidePageProps {
@@ -32,8 +33,8 @@ export default async function GuidePage({ params }: GuidePageProps) {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <img
-              src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${guide.hero.imageIcon}.png`}
+            <SafeImage
+              src={getHeroImageUrl(guide.hero.imageIcon)}
               alt={guide.hero.localizedNameZh}
               className="w-16 h-16 rounded-lg object-cover border border-dota-border"
             />

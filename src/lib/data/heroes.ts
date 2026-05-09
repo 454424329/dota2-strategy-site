@@ -8,8 +8,8 @@ import {
   type OpenDotaHeroStat,
   type OpenDotaMatchup,
 } from "./opendota";
+import { MOCK_HEROES } from "./heroes-mock";
 import {
-  MOCK_HEROES,
   generateMockMeta,
   generateMockMatchups,
   generateMockItemBuilds,

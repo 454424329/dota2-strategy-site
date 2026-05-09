@@ -1,10 +1,11 @@
 import Link from "next/link";
 import type { HeroData } from "@/types/dota";
 import { ATTRIBUTE_NAMES, type AttributeType } from "@/types/dota";
-import { cn } from "@/lib/utils";
+import { cn, getHeroImageUrl } from "@/lib/utils";
 import { HeroWinRateBadge } from "@/components/hero/HeroWinRateBadge";
 import { HeroRoleTags } from "@/components/hero/HeroRoleTags";
 import { Badge } from "@/components/ui/badge";
+import { SafeImage } from "@/components/shared/SafeImage";
 
 const attributeBadgeVariant: Record<AttributeType, "str" | "agi" | "int" | "uni"> = {
   str: "str",
@@ -19,7 +20,6 @@ interface HeroCardProps {
 }
 
 export function HeroCard({ hero, className }: HeroCardProps) {
-  const imageUrl = `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.imageIcon}.png`;
   const attr = hero.primaryAttribute;
 
   return (
@@ -32,11 +32,10 @@ export function HeroCard({ hero, className }: HeroCardProps) {
     >
       {/* Hero image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-dota-bg">
-        <img
-          src={imageUrl}
+        <SafeImage
+          src={getHeroImageUrl(hero.imageIcon)}
           alt={hero.localizedNameZh}
           className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
         />
         {/* Attribute badge overlay */}
         <div className="absolute top-2 left-2">

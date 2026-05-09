@@ -3,9 +3,10 @@ import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { getAllHeroesWithMeta } from "@/lib/data";
 import { HeroWinRateBadge } from "@/components/hero/HeroWinRateBadge";
-import { formatPercent } from "@/lib/utils";
+import { formatPercent, getHeroImageUrl } from "@/lib/utils";
 
 const tiers = [
   { label: "T1", minWR: 0.52, color: "text-dota-gold", bg: "bg-dota-gold/10" },
@@ -73,11 +74,10 @@ export default async function TierListPage() {
                   >
                     <Card className={`${tierBorder[tier.label]} card-hover`}>
                       <CardContent className="py-3 flex items-center gap-3">
-                        <img
-                          src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.imageIcon}.png`}
+                        <SafeImage
+                          src={getHeroImageUrl(hero.imageIcon)}
                           alt={hero.localizedNameZh}
                           className="w-10 h-10 rounded object-cover shrink-0"
-                          loading="lazy"
                         />
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-dota-text truncate">

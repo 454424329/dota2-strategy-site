@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { getAllItems } from "@/lib/data";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { getItemImageUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -26,11 +27,10 @@ export default async function ItemsPage() {
           <Link key={item.id} href={`/items/${item.id}`}>
             <Card className="h-full card-hover">
               <CardContent className="p-3 text-center">
-                <img
+                <SafeImage
                   src={getItemImageUrl(item.imageIcon)}
                   alt={item.localizedNameZh}
                   className="w-12 h-8 mx-auto rounded object-cover mb-2"
-                  loading="lazy"
                 />
                 <p className="text-xs font-medium text-dota-text truncate">
                   {item.localizedNameZh}

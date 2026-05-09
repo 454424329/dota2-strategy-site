@@ -5,8 +5,10 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { SafeImage } from "@/components/shared/SafeImage";
 import { getAllHeroesWithMeta, getAllItems, getLatestNews } from "@/lib/data";
 import { MOCK_GUIDES } from "@/lib/mock-data";
+import { getHeroImageUrl, getItemImageUrl } from "@/lib/utils";
 import { Search } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -130,11 +132,10 @@ async function SearchResults({ query }: { query: string }) {
               <Link key={hero.id} href={`/heroes/${hero.name}`}>
                 <Card className="h-full card-hover">
                   <CardContent className="p-3 text-center">
-                    <img
-                      src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${hero.imageIcon}.png`}
+                    <SafeImage
+                      src={getHeroImageUrl(hero.imageIcon)}
                       alt={hero.localizedNameZh}
                       className="w-12 h-12 mx-auto rounded object-cover mb-2"
-                      loading="lazy"
                     />
                     <p className="text-xs font-medium text-dota-text truncate">
                       {hero.localizedNameZh}
@@ -163,11 +164,10 @@ async function SearchResults({ query }: { query: string }) {
               <Link key={item.id} href={`/items/${item.id}`}>
                 <Card className="h-full card-hover">
                   <CardContent className="p-3 text-center">
-                    <img
-                      src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/${item.imageIcon}.png`}
+                    <SafeImage
+                      src={getItemImageUrl(item.imageIcon)}
                       alt={item.localizedNameZh}
                       className="w-12 h-8 mx-auto rounded object-cover mb-2"
-                      loading="lazy"
                     />
                     <p className="text-xs font-medium text-dota-text truncate">
                       {item.localizedNameZh}
@@ -193,11 +193,10 @@ async function SearchResults({ query }: { query: string }) {
                 <Card className="card-hover">
                   <CardContent className="py-3">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${guide.hero.imageIcon}.png`}
+                      <SafeImage
+                        src={getHeroImageUrl(guide.hero.imageIcon)}
                         alt={guide.hero.localizedNameZh}
                         className="w-10 h-10 rounded object-cover shrink-0"
-                        loading="lazy"
                       />
                       <div className="min-w-0 flex-1">
                         <p className="text-sm font-medium text-dota-text truncate">
