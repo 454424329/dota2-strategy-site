@@ -122,10 +122,97 @@ export async function fetchTeams(): Promise<OpenDotaTeam[] | null> {
   return fetchOpenDota<OpenDotaTeam[]>("/teams");
 }
 
+// ── Esports detail types ──
+
+interface OpenDotaMatchDetail {
+  match_id: number;
+  start_time: number;
+  duration: number;
+  radiant_team: { team_id: number; name: string; tag: string; logo_url?: string };
+  dire_team: { team_id: number; name: string; tag: string; logo_url?: string };
+  radiant_score: number;
+  dire_score: number;
+  radiant_win: boolean;
+  league: { leagueid: number; name: string; tier: string };
+  picks_bans: Array<{
+    is_pick: boolean;
+    hero_id: number;
+    team: number;
+    order: number;
+  }> | null;
+  players: Array<{
+    account_id: number;
+    name?: string;
+    hero_id: number;
+    level: number;
+    kills: number;
+    deaths: number;
+    assists: number;
+    net_worth: number;
+    last_hits: number;
+    denies: number;
+    gold_per_min: number;
+    xp_per_min: number;
+    item_0: number;
+    item_1: number;
+    item_2: number;
+    item_3: number;
+    item_4: number;
+    item_5: number;
+    backpack_0: number;
+    backpack_1: number;
+    backpack_2: number;
+    item_neutral: number;
+    isRadiant: boolean;
+  }> | null;
+}
+
+interface OpenDotaLeague {
+  leagueid: number;
+  name: string;
+  ticket?: string;
+  banner?: string;
+  tier: string;
+}
+
+interface OpenDotaTeamMember {
+  account_id: number;
+  name: string;
+  avatar?: string;
+  country_code?: string;
+  fantasy_role?: number;
+  is_current_team_member: boolean;
+}
+
+// ── Esports API functions ──
+
+export async function fetchMatchDetail(matchId: number): Promise<OpenDotaMatchDetail | null> {
+  return fetchOpenDota<OpenDotaMatchDetail>(`/matches/${matchId}`);
+}
+
+export async function fetchLeagues(): Promise<OpenDotaLeague[] | null> {
+  return fetchOpenDota<OpenDotaLeague[]>("/leagues");
+}
+
+export async function fetchTeamMatches(teamId: number): Promise<OpenDotaProMatch[] | null> {
+  return fetchOpenDota<OpenDotaProMatch[]>(`/teams/${teamId}/matches`);
+}
+
+export async function fetchTeamPlayers(teamId: number): Promise<OpenDotaTeamMember[] | null> {
+  return fetchOpenDota<OpenDotaTeamMember[]>(`/teams/${teamId}/players`);
+}
+
+export async function fetchLiveMatches(): Promise<OpenDotaProMatch[] | null> {
+  return fetchOpenDota<OpenDotaProMatch[]>("/live");
+}
+
 export type {
   OpenDotaHero,
   OpenDotaHeroStat,
   OpenDotaMatchup,
   OpenDotaProMatch,
   OpenDotaTeam,
+  OpenDotaMatchDetail,
+  OpenDotaLeague,
+  OpenDotaTeamMember,
 };

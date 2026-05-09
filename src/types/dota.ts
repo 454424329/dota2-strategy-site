@@ -182,6 +182,88 @@ export const DIFFICULTY_NAMES: Record<string, string> = {
   advanced: "高手",
 };
 
+// ── Esports types ──
+
+export interface ProMatchData {
+  matchId: number;
+  startTime: number;
+  duration: number;
+  radiantTeam: { teamId: number; name: string; tag: string; logoUrl?: string };
+  direTeam: { teamId: number; name: string; tag: string; logoUrl?: string };
+  radiantScore: number;
+  direScore: number;
+  radiantWin: boolean;
+  league: { leagueId: number; name: string; tier: string; tierLabel: string };
+  draftData?: TeamDraftData[];
+  players?: PlayerPerformance[];
+  goldAdv?: number[];
+  xpAdv?: number[];
+}
+
+export interface TeamDraftData {
+  isRadiant: boolean;
+  bans: DraftPick[];
+  picks: DraftPick[];
+}
+
+export interface DraftPick {
+  heroId: number;
+  heroName: string;
+  heroNameZh: string;
+  heroIcon: string;
+  order: number;
+  isBan: boolean;
+}
+
+export interface TeamData {
+  teamId: number;
+  name: string;
+  tag: string;
+  logoUrl: string;
+  rating: number;
+  wins: number;
+  losses: number;
+  winRate: number;
+}
+
+export interface LeagueData {
+  leagueId: number;
+  name: string;
+  tier: string;
+  tierLabel: string;
+}
+
+export interface PlayerPerformance {
+  accountId: number;
+  name: string;
+  heroId: number;
+  heroName: string;
+  heroNameZh: string;
+  heroIcon: string;
+  level: number;
+  kills: number;
+  deaths: number;
+  assists: number;
+  netWorth: number;
+  lastHits: number;
+  denies: number;
+  gpm: number;
+  xpm: number;
+  items: number[];
+  backpackItems: number[];
+  neutralItem: number | null;
+  isRadiant: boolean;
+}
+
+export const LEAGUE_TIERS: Record<string, string> = {
+  premier: "顶级",
+  professional: "职业",
+  semi_professional: "半职业",
+  amateur: "业余",
+  minor: "次级",
+  major: "甲级",
+};
+
 export const RANK_BRACKETS = [
   { value: "all", label: "全分段" },
   { value: "herald", label: "先锋" },

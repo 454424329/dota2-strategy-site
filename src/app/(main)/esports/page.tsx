@@ -1,37 +1,21 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { fetchProMatches, type OpenDotaProMatch } from "@/lib/data/opendota";
-import { Trophy, Swords } from "lucide-react";
+import { StatsSummary } from "@/components/esports/StatsSummary";
+import { MatchCard } from "@/components/esports/MatchCard";
+import { getProMatches, getTeams, getLeagues } from "@/lib/data";
+import { Swords, Users, Calendar } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "赛事中心",
-  description: "DOTA2职业比赛数据、赛程安排和队伍排名。",
-};
+export default async function EsportsHubPage() {
+  const matches = await getProMatches();
+  const teams = await getTeams();
+  const leagues = await getLeagues();
 
-function formatMatchDuration(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${m}:${String(s).padStart(2, "0")}`;
-}
-
-function formatMatchTime(unixTime: number): string {
-  const d = new Date(unixTime * 1000);
-  const now = new Date();
-  const diff = now.getTime() - d.getTime();
-  const hours = Math.floor(diff / 3600000);
-  const days = Math.floor(diff / 86400000);
-
-  if (hours < 1) return "刚刚结束";
-  if (hours < 24) return `${hours}小时前`;
-  if (days < 7) return `${days}天前`;
-  return d.toLocaleDateString("zh-CN", { month: "short", day: "numeric" });
-}
-
-export default async function EsportsPage() {
-  const matches = await fetchProMatches();
+  const now = Math.floor(Date.now() / 1000);
+  const upcoming = matches.filter((m) => m.startTime > now).slice(0, 5);
+  const recent = matches.filter((m) => m.startTime <= now).slice(0, 5);
 
   return (
     <Container className="py-8">
@@ -40,74 +24,76 @@ export default async function EsportsPage() {
         description="职业比赛数据、赛程安排和队伍排名"
       />
 
-      {matches && matches.length > 0 ? (
+      <StatsSummary
+        totalMatches={matches.length}
+        activeTeams={teams.length}
+        upcomingMatches={upcoming.length}
+        activeLeagues={leagues.length}
+      />
+
+      {/* Quick access */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <Link href="/esports/matches">
+          <Card className="card-hover h-full">
+            <CardContent className="py-6 flex flex-col items-center text-center">
+              <Swords className="w-8 h-8 text-dota-accent mb-3" />
+              <h3 className="font-semibold text-dota-text mb-1">比赛数据</h3>
+              <p className="text-xs text-dota-muted">查看所有职业比赛记录</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/esports/teams">
+          <Card className="card-hover h-full">
+            <CardContent className="py-6 flex flex-col items-center text-center">
+              <Users className="w-8 h-8 text-dota-accent mb-3" />
+              <h3 className="font-semibold text-dota-text mb-1">战队排名</h3>
+              <p className="text-xs text-dota-muted">全球战队实力排行榜</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/esports/schedule">
+          <Card className="card-hover h-full">
+            <CardContent className="py-6 flex flex-col items-center text-center">
+              <Calendar className="w-8 h-8 text-dota-accent mb-3" />
+              <h3 className="font-semibold text-dota-text mb-1">赛程安排</h3>
+              <p className="text-xs text-dota-muted">即将进行的比赛一览</p>
+            </CardContent>
+          </Card>
+        </Link>
+      </div>
+
+      {/* Recent matches */}
+      <section className="mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold text-dota-text">最近比赛</h2>
+          <Link href="/esports/matches" className="text-sm text-dota-accent hover:underline">
+            查看全部
+          </Link>
+        </div>
         <div className="space-y-3">
-          {matches.slice(0, 30).map((match) => (
-            <MatchCard key={match.match_id} match={match} />
+          {recent.map((m) => (
+            <MatchCard key={m.matchId} match={m} showDetails />
           ))}
         </div>
-      ) : (
-        <Card>
-          <CardContent className="py-16 text-center">
-            <Trophy className="w-16 h-16 text-dota-border mx-auto mb-4" />
-            <h2 className="text-lg font-semibold text-dota-text mb-2">
-              赛事中心即将上线
-            </h2>
-            <p className="text-sm text-dota-muted max-w-md mx-auto">
-              我们将接入职业比赛数据，提供实时比赛信息、赛程安排和队伍排名。敬请期待！
-            </p>
-          </CardContent>
-        </Card>
-      )}
-    </Container>
-  );
-}
+      </section>
 
-function MatchCard({ match }: { match: OpenDotaProMatch }) {
-  const radiantWon = match.radiant_win;
-  const radiantTag = match.radiant_team?.tag || match.radiant_team?.name || "天辉";
-  const direTag = match.dire_team?.tag || match.dire_team?.name || "夜魇";
-
-  return (
-    <Card className="card-hover">
-      <CardContent className="py-4">
-        <div className="flex items-center justify-between gap-4">
-          {/* Teams and score */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="flex items-center gap-2 min-w-0">
-                <Swords className="w-4 h-4 text-dota-accent shrink-0" />
-                <span className={`text-sm font-semibold truncate ${radiantWon ? "text-dota-green" : "text-dota-text"}`}>
-                  {radiantTag}
-                </span>
-              </div>
-              <span className="text-sm font-bold text-dota-gold shrink-0">
-                {match.radiant_score} - {match.dire_score}
-              </span>
-              <span className={`text-sm font-semibold truncate ${!radiantWon ? "text-dota-green" : "text-dota-text"}`}>
-                {direTag}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-dota-muted">
-              {match.league && (
-                <>
-                  <span>{match.league.name}</span>
-                  <span>·</span>
-                </>
-              )}
-              <span>{formatMatchDuration(match.duration)}</span>
-              <span>·</span>
-              <span>{formatMatchTime(match.start_time)}</span>
-            </div>
-          </div>
-
-          <div className="shrink-0 text-right">
-            <Badge variant={radiantWon ? "str" : "agi"}>
-              {radiantWon ? "天辉胜" : "夜魇胜"}
-            </Badge>
-          </div>
+      {/* Popular leagues */}
+      <section>
+        <h2 className="text-lg font-semibold text-dota-text mb-4">热门联赛</h2>
+        <div className="flex flex-wrap gap-2">
+          {leagues.slice(0, 10).map((l) => (
+            <a key={l.leagueId} href={`/esports/matches?league=${l.leagueId}`}>
+              <Badge
+                variant="outline"
+                className="cursor-pointer hover:opacity-100 opacity-80 transition-opacity"
+              >
+                {l.name}
+                <span className="ml-1.5 text-dota-muted">({l.tierLabel})</span>
+              </Badge>
+            </a>
+          ))}
         </div>
-      </CardContent>
-    </Card>
+      </section>
+    </Container>
   );
 }

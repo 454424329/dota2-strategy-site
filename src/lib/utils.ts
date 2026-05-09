@@ -73,3 +73,28 @@ export function slugify(text: string): string {
     .replace(/-+/g, "-")
     .trim();
 }
+
+export function formatMatchDuration(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+export function formatMatchTime(unixTime: number): string {
+  const d = new Date(unixTime * 1000);
+  const now = new Date();
+  const diff = now.getTime() - d.getTime();
+  const hours = Math.floor(diff / 3600000);
+  const days = Math.floor(diff / 86400000);
+
+  if (hours < 1) return "刚刚结束";
+  if (hours < 24) return `${hours}小时前`;
+  if (days < 7) return `${days}天前`;
+  return d.toLocaleDateString("zh-CN", { month: "short", day: "numeric" });
+}
+
+export function getTeamLogoUrl(logoUrl?: string, teamId?: number): string {
+  if (logoUrl && logoUrl.startsWith("http")) return logoUrl;
+  if (teamId) return `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/team_logos/${teamId}.png`;
+  return "";
+}
