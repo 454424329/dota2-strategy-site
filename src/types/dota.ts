@@ -14,6 +14,7 @@ export interface HeroData {
   meta?: HeroMetaData;
   matchups?: HeroMatchupData[];
   itemBuilds?: ItemBuildData[];
+  buildPaths?: ItemBuildPath[];
 }
 
 export interface HeroMetaData {
@@ -52,6 +53,20 @@ export interface ItemBuildData {
   popularity: number;
   winRate: number;
   avgTiming?: number;
+}
+
+export interface ItemBuildPath {
+  id: string;
+  nameZh: string;
+  description: string;
+  playstyle: string;
+  phaseGroups: ItemBuildPhaseGroup[];
+}
+
+export interface ItemBuildPhaseGroup {
+  gamePhase: "starting" | "early" | "mid" | "late";
+  label: string;
+  items: ItemBuildData[];
 }
 
 export interface ItemData {
@@ -224,6 +239,8 @@ export interface TeamData {
   wins: number;
   losses: number;
   winRate: number;
+  eptPoints: number;
+  eptRank?: number;
 }
 
 export interface LeagueData {

@@ -29,6 +29,11 @@ export function TeamRow({ team, rank }: TeamRowProps) {
         </div>
       </td>
       <td className="py-3 px-2 text-center">
+        <span className="text-sm font-bold text-dota-gold font-mono">
+          {team.eptPoints.toLocaleString()}
+        </span>
+      </td>
+      <td className="py-3 px-2 text-center">
         <div className="flex items-center gap-2">
           <div className="flex-1 h-1.5 bg-dota-border rounded-full overflow-hidden max-w-[80px] mx-auto">
             <div

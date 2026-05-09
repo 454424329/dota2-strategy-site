@@ -60,7 +60,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 606,
     name: "item_recipe_arcane_blink",
-    localizedNameZh: "Arcane Blink Recipe",
+    localizedNameZh: "奥术闪现合成卷轴",
     localizedNameEn: "Arcane Blink Recipe",
     cost: 1750,
     isRecipe: false,
@@ -74,7 +74,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 607,
     name: "item_recipe_swift_blink",
-    localizedNameZh: "Swift Blink Recipe",
+    localizedNameZh: "迅捷闪现合成卷轴",
     localizedNameEn: "Swift Blink Recipe",
     cost: 1750,
     isRecipe: false,
@@ -88,7 +88,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 608,
     name: "item_recipe_overwhelming_blink",
-    localizedNameZh: "Overwhelming Blink Recipe",
+    localizedNameZh: "蛮牛闪现合成卷轴",
     localizedNameEn: "Overwhelming Blink Recipe",
     cost: 1750,
     isRecipe: false,
@@ -116,7 +116,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 3,
     name: "item_broadsword",
-    localizedNameZh: "大剑",
+    localizedNameZh: "阔剑",
     localizedNameEn: "Broadsword",
     cost: 1000,
     isRecipe: false,
@@ -144,7 +144,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1847,
     name: "item_splintmail",
-    localizedNameZh: "Splintmail",
+    localizedNameZh: "裂片甲",
     localizedNameEn: "Splintmail",
     cost: 950,
     isRecipe: false,
@@ -158,7 +158,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 5,
     name: "item_claymore",
-    localizedNameZh: "阔剑",
+    localizedNameZh: "大剑",
     localizedNameEn: "Claymore",
     cost: 1350,
     isRecipe: false,
@@ -256,7 +256,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 237,
     name: "item_faerie_fire",
-    localizedNameZh: "Faerie Fire",
+    localizedNameZh: "仙灵之火",
     localizedNameEn: "Faerie Fire",
     cost: 65,
     isRecipe: false,
@@ -284,7 +284,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 244,
     name: "item_wind_lace",
-    localizedNameZh: "Wind Lace",
+    localizedNameZh: "风灵之纹",
     localizedNameEn: "Wind Lace",
     cost: 225,
     isRecipe: false,
@@ -312,7 +312,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 182,
     name: "item_stout_shield",
-    localizedNameZh: "Stout Shield",
+    localizedNameZh: "圆盾",
     localizedNameEn: "Stout Shield",
     cost: 100,
     isRecipe: false,
@@ -410,7 +410,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 18,
     name: "item_boots_of_elves",
-    localizedNameZh: "精灵靴",
+    localizedNameZh: "精灵皮靴",
     localizedNameEn: "Band of Elvenskin",
     cost: 450,
     isRecipe: false,
@@ -522,7 +522,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 24,
     name: "item_ultimate_orb",
-    localizedNameZh: "Ultimate Orb",
+    localizedNameZh: "极限法球",
     localizedNameEn: "Ultimate Orb",
     cost: 2800,
     isRecipe: false,
@@ -550,7 +550,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 485,
     name: "item_blitz_knuckles",
-    localizedNameZh: "Blitz Knuckles",
+    localizedNameZh: "闪电指套",
     localizedNameEn: "Blitz Knuckles",
     cost: 1000,
     isRecipe: false,
@@ -564,7 +564,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 26,
     name: "item_lifesteal",
-    localizedNameZh: "Morbid Mask",
+    localizedNameZh: "吸血面具",
     localizedNameEn: "Morbid Mask",
     cost: 900,
     isRecipe: false,
@@ -578,7 +578,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 473,
     name: "item_voodoo_mask",
-    localizedNameZh: "Voodoo Mask",
+    localizedNameZh: "巫毒面具",
     localizedNameEn: "Voodoo Mask",
     cost: 650,
     isRecipe: false,
@@ -606,7 +606,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 28,
     name: "item_sobi_mask",
-    localizedNameZh: "Sage's Mask",
+    localizedNameZh: "贤者面罩",
     localizedNameEn: "Sage's Mask",
     cost: 175,
     isRecipe: false,
@@ -648,7 +648,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1848,
     name: "item_shawl",
-    localizedNameZh: "Shawl",
+    localizedNameZh: "披肩",
     localizedNameEn: "Shawl",
     cost: 450,
     isRecipe: false,
@@ -662,7 +662,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 31,
     name: "item_cloak",
-    localizedNameZh: "Cloak",
+    localizedNameZh: "抗魔斗篷",
     localizedNameEn: "Cloak",
     cost: 900,
     isRecipe: false,
@@ -676,7 +676,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 32,
     name: "item_talisman_of_evasion",
-    localizedNameZh: "Talisman of Evasion",
+    localizedNameZh: "闪避护符",
     localizedNameEn: "Talisman of Evasion",
     cost: 1300,
     isRecipe: false,
@@ -718,7 +718,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 35,
     name: "item_recipe_magic_wand",
-    localizedNameZh: "Magic Wand Recipe",
+    localizedNameZh: "魔杖合成卷轴",
     localizedNameEn: "Magic Wand Recipe",
     cost: 150,
     isRecipe: false,
@@ -788,7 +788,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 4204,
     name: "item_famango",
-    localizedNameZh: "Healing Lotus",
+    localizedNameZh: "治疗莲花",
     localizedNameEn: "Healing Lotus",
     cost: 0,
     isRecipe: false,
@@ -802,7 +802,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 4205,
     name: "item_great_famango",
-    localizedNameZh: "Great Healing Lotus",
+    localizedNameZh: "大型治疗莲花",
     localizedNameEn: "Great Healing Lotus",
     cost: 0,
     isRecipe: false,
@@ -816,7 +816,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 4206,
     name: "item_greater_famango",
-    localizedNameZh: "Greater Healing Lotus",
+    localizedNameZh: "超级治疗莲花",
     localizedNameEn: "Greater Healing Lotus",
     cost: 0,
     isRecipe: false,
@@ -844,7 +844,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1154,
     name: "item_royale_with_cheese",
-    localizedNameZh: "Block of Cheese",
+    localizedNameZh: "奶酪块",
     localizedNameEn: "Block of Cheese",
     cost: 2,
     isRecipe: false,
@@ -858,7 +858,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 39,
     name: "item_flask",
-    localizedNameZh: "Healing Salve",
+    localizedNameZh: "治疗药膏",
     localizedNameEn: "Healing Salve",
     cost: 100,
     isRecipe: false,
@@ -914,7 +914,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 43,
     name: "item_ward_sentry",
-    localizedNameZh: "Sentry Ward",
+    localizedNameZh: "岗哨守卫",
     localizedNameEn: "Sentry Ward",
     cost: 50,
     isRecipe: false,
@@ -928,7 +928,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 218,
     name: "item_ward_dispenser",
-    localizedNameZh: "Observer and Sentry Wards",
+    localizedNameZh: "侦查·岗哨守卫",
     localizedNameEn: "Observer and Sentry Wards",
     cost: 50,
     isRecipe: false,
@@ -956,7 +956,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 241,
     name: "item_tango_single",
-    localizedNameZh: "Tango (Shared)",
+    localizedNameZh: "树之祭祀（共享）",
     localizedNameEn: "Tango (Shared)",
     cost: 30,
     isRecipe: false,
@@ -970,7 +970,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 45,
     name: "item_courier",
-    localizedNameZh: "Animal Courier",
+    localizedNameZh: "动物信使",
     localizedNameEn: "Animal Courier",
     cost: 50,
     isRecipe: false,
@@ -984,7 +984,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 286,
     name: "item_flying_courier",
-    localizedNameZh: "Flying Courier",
+    localizedNameZh: "飞行信使",
     localizedNameEn: "Flying Courier",
     cost: 100,
     isRecipe: false,
@@ -998,7 +998,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 46,
     name: "item_tpscroll",
-    localizedNameZh: "Town Portal Scroll",
+    localizedNameZh: "回城卷轴",
     localizedNameEn: "Town Portal Scroll",
     cost: 100,
     isRecipe: false,
@@ -1012,7 +1012,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 47,
     name: "item_recipe_travel_boots",
-    localizedNameZh: "Boots of Travel Recipe",
+    localizedNameZh: "远行鞋合成卷轴",
     localizedNameEn: "Boots of Travel Recipe",
     cost: 2000,
     isRecipe: false,
@@ -1026,7 +1026,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 48,
     name: "item_travel_boots",
-    localizedNameZh: "Boots of Travel",
+    localizedNameZh: "远行鞋",
     localizedNameEn: "Boots of Travel",
     cost: 2500,
     isRecipe: false,
@@ -1040,7 +1040,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 220,
     name: "item_travel_boots_2",
-    localizedNameZh: "Boots of Travel 2",
+    localizedNameZh: "远行鞋II",
     localizedNameEn: "Boots of Travel 2",
     cost: 4500,
     isRecipe: false,
@@ -1082,7 +1082,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 52,
     name: "item_eagle",
-    localizedNameZh: "Eaglesong",
+    localizedNameZh: "鹰歌弓",
     localizedNameEn: "Eaglesong",
     cost: 2800,
     isRecipe: false,
@@ -1110,7 +1110,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 54,
     name: "item_relic",
-    localizedNameZh: "Sacred Relic",
+    localizedNameZh: "圣者遗物",
     localizedNameEn: "Sacred Relic",
     cost: 3400,
     isRecipe: false,
@@ -1180,7 +1180,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1802,
     name: "item_tiara_of_selemene",
-    localizedNameZh: "Tiara of Selemene",
+    localizedNameZh: "瑟勒梅涅之冠",
     localizedNameEn: "Tiara of Selemene",
     cost: 1700,
     isRecipe: false,
@@ -1208,7 +1208,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 59,
     name: "item_energy_booster",
-    localizedNameZh: "Energy Booster",
+    localizedNameZh: "能量之球",
     localizedNameEn: "Energy Booster",
     cost: 800,
     isRecipe: false,
@@ -1222,7 +1222,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 60,
     name: "item_point_booster",
-    localizedNameZh: "Point Booster",
+    localizedNameZh: "精气之球",
     localizedNameEn: "Point Booster",
     cost: 1200,
     isRecipe: false,
@@ -1236,7 +1236,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 61,
     name: "item_vitality_booster",
-    localizedNameZh: "Vitality Booster",
+    localizedNameZh: "活力之球",
     localizedNameEn: "Vitality Booster",
     cost: 1000,
     isRecipe: false,
@@ -1264,7 +1264,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1849,
     name: "item_wizard_hat",
-    localizedNameZh: "Wizard Hat",
+    localizedNameZh: "巫师之帽",
     localizedNameEn: "Wizard Hat",
     cost: 250,
     isRecipe: false,
@@ -1292,7 +1292,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1106,
     name: "item_recipe_phylactery",
-    localizedNameZh: "Phylactery Recipe",
+    localizedNameZh: "灵匣合成卷轴",
     localizedNameEn: "Phylactery Recipe",
     cost: 200,
     isRecipe: false,
@@ -1320,7 +1320,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1808,
     name: "item_angels_demise",
-    localizedNameZh: "Khanda",
+    localizedNameZh: "天命",
     localizedNameEn: "Khanda",
     cost: 5600,
     isRecipe: false,
@@ -1334,7 +1334,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 64,
     name: "item_recipe_hand_of_midas",
-    localizedNameZh: "Hand of Midas Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Hand of Midas Recipe",
     cost: 1750,
     isRecipe: false,
@@ -1362,7 +1362,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 67,
     name: "item_oblivion_staff",
-    localizedNameZh: "Oblivion Staff",
+    localizedNameZh: "遗忘法杖",
     localizedNameEn: "Oblivion Staff",
     cost: 1625,
     isRecipe: false,
@@ -1376,7 +1376,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 533,
     name: "item_recipe_witch_blade",
-    localizedNameZh: "Witch Blade Recipe",
+    localizedNameZh: "巫师之刃合成卷轴",
     localizedNameEn: "Witch Blade Recipe",
     cost: 300,
     isRecipe: false,
@@ -1390,7 +1390,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 534,
     name: "item_witch_blade",
-    localizedNameZh: "Witch Blade",
+    localizedNameZh: "巫师之刃",
     localizedNameEn: "Witch Blade",
     cost: 2775,
     isRecipe: false,
@@ -1404,7 +1404,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 69,
     name: "item_pers",
-    localizedNameZh: "Perseverance",
+    localizedNameZh: "坚韧球",
     localizedNameEn: "Perseverance",
     cost: 1400,
     isRecipe: false,
@@ -1418,7 +1418,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1125,
     name: "item_cornucopia",
-    localizedNameZh: "Cornucopia",
+    localizedNameZh: "丰饶之角",
     localizedNameEn: "Cornucopia",
     cost: 1200,
     isRecipe: false,
@@ -1446,7 +1446,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 72,
     name: "item_recipe_bracer",
-    localizedNameZh: "Bracer Recipe",
+    localizedNameZh: "护腕合成卷轴",
     localizedNameEn: "Bracer Recipe",
     cost: 210,
     isRecipe: false,
@@ -1474,7 +1474,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 74,
     name: "item_recipe_wraith_band",
-    localizedNameZh: "Wraith Band Recipe",
+    localizedNameZh: "幽灵系带合成卷轴",
     localizedNameEn: "Wraith Band Recipe",
     cost: 210,
     isRecipe: false,
@@ -1502,7 +1502,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 76,
     name: "item_recipe_null_talisman",
-    localizedNameZh: "Null Talisman Recipe",
+    localizedNameZh: "空灵挂件合成卷轴",
     localizedNameEn: "Null Talisman Recipe",
     cost: 210,
     isRecipe: false,
@@ -1530,7 +1530,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 78,
     name: "item_recipe_mekansm",
-    localizedNameZh: "Mekansm Recipe",
+    localizedNameZh: "梅肯斯姆合成卷轴",
     localizedNameEn: "Mekansm Recipe",
     cost: 850,
     isRecipe: false,
@@ -1544,7 +1544,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 79,
     name: "item_mekansm",
-    localizedNameZh: "Mekansm",
+    localizedNameZh: "梅肯斯姆",
     localizedNameEn: "Mekansm",
     cost: 1775,
     isRecipe: false,
@@ -1572,7 +1572,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 908,
     name: "item_wraith_pact",
-    localizedNameZh: "Wraith Pact",
+    localizedNameZh: "冥魂盟约",
     localizedNameEn: "Wraith Pact",
     cost: 3800,
     isRecipe: false,
@@ -1586,7 +1586,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 85,
     name: "item_recipe_buckler",
-    localizedNameZh: "Buckler Recipe",
+    localizedNameZh: "圆盾合成卷轴",
     localizedNameEn: "Buckler Recipe",
     cost: 250,
     isRecipe: false,
@@ -1600,7 +1600,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 86,
     name: "item_buckler",
-    localizedNameZh: "Buckler",
+    localizedNameZh: "圆盾",
     localizedNameEn: "Buckler",
     cost: 425,
     isRecipe: false,
@@ -1614,7 +1614,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 87,
     name: "item_recipe_ring_of_basilius",
-    localizedNameZh: "Ring of Basilius Recipe",
+    localizedNameZh: "圣殿指环合成卷轴",
     localizedNameEn: "Ring of Basilius Recipe",
     cost: 250,
     isRecipe: false,
@@ -1642,7 +1642,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 268,
     name: "item_recipe_holy_locket",
-    localizedNameZh: "Holy Locket Recipe",
+    localizedNameZh: "圣洁吊坠合成卷轴",
     localizedNameEn: "Holy Locket Recipe",
     cost: 1340,
     isRecipe: false,
@@ -1670,7 +1670,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 89,
     name: "item_recipe_pipe",
-    localizedNameZh: "Pipe of Insight Recipe",
+    localizedNameZh: "洞察烟斗合成卷轴",
     localizedNameEn: "Pipe of Insight Recipe",
     cost: 675,
     isRecipe: false,
@@ -1698,7 +1698,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 91,
     name: "item_recipe_urn_of_shadows",
-    localizedNameZh: "Urn of Shadows Recipe",
+    localizedNameZh: "影之灵龛合成卷轴",
     localizedNameEn: "Urn of Shadows Recipe",
     cost: 320,
     isRecipe: false,
@@ -1726,7 +1726,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 93,
     name: "item_recipe_headdress",
-    localizedNameZh: "Headdress Recipe",
+    localizedNameZh: "头巾合成卷轴",
     localizedNameEn: "Headdress Recipe",
     cost: 250,
     isRecipe: false,
@@ -1740,7 +1740,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 94,
     name: "item_headdress",
-    localizedNameZh: "Headdress",
+    localizedNameZh: "头巾",
     localizedNameEn: "Headdress",
     cost: 425,
     isRecipe: false,
@@ -1754,7 +1754,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 95,
     name: "item_recipe_sheepstick",
-    localizedNameZh: "Scythe of Vyse Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Scythe of Vyse Recipe",
     cost: 700,
     isRecipe: false,
@@ -1768,7 +1768,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 96,
     name: "item_sheepstick",
-    localizedNameZh: "Scythe of Vyse",
+    localizedNameZh: "邪恶镰刀",
     localizedNameEn: "Scythe of Vyse",
     cost: 5200,
     isRecipe: false,
@@ -1782,7 +1782,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 97,
     name: "item_recipe_orchid",
-    localizedNameZh: "Orchid Malevolence Recipe",
+    localizedNameZh: "紫怨合成卷轴",
     localizedNameEn: "Orchid Malevolence Recipe",
     cost: 300,
     isRecipe: false,
@@ -1810,7 +1810,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 245,
     name: "item_recipe_bloodthorn",
-    localizedNameZh: "Bloodthorn Recipe",
+    localizedNameZh: "血棘合成卷轴",
     localizedNameEn: "Bloodthorn Recipe",
     cost: 600,
     isRecipe: false,
@@ -1852,7 +1852,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 99,
     name: "item_recipe_cyclone",
-    localizedNameZh: "Eul's Scepter Recipe",
+    localizedNameZh: "EUL神圣法杖合成卷轴",
     localizedNameEn: "Eul's Scepter Recipe",
     cost: 675,
     isRecipe: false,
@@ -1866,7 +1866,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 100,
     name: "item_cyclone",
-    localizedNameZh: "Eul's Scepter of Divinity",
+    localizedNameZh: "EUL的神圣法杖",
     localizedNameEn: "Eul's Scepter of Divinity",
     cost: 2600,
     isRecipe: false,
@@ -1880,7 +1880,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 612,
     name: "item_recipe_wind_waker",
-    localizedNameZh: "Wind Waker Recipe",
+    localizedNameZh: "风之杖合成卷轴",
     localizedNameEn: "Wind Waker Recipe",
     cost: 1400,
     isRecipe: false,
@@ -1908,7 +1908,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 233,
     name: "item_recipe_aether_lens",
-    localizedNameZh: "Aether Lens Recipe",
+    localizedNameZh: "以太透镜合成卷轴",
     localizedNameEn: "Aether Lens Recipe",
     cost: 775,
     isRecipe: false,
@@ -1922,7 +1922,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 232,
     name: "item_aether_lens",
-    localizedNameZh: "Aether Lens",
+    localizedNameZh: "以太透镜",
     localizedNameEn: "Aether Lens",
     cost: 2275,
     isRecipe: false,
@@ -1936,7 +1936,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 101,
     name: "item_recipe_force_staff",
-    localizedNameZh: "Force Staff Recipe",
+    localizedNameZh: "原力法杖合成卷轴",
     localizedNameEn: "Force Staff Recipe",
     cost: 950,
     isRecipe: false,
@@ -1964,7 +1964,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 262,
     name: "item_recipe_hurricane_pike",
-    localizedNameZh: "Hurricane Pike Recipe",
+    localizedNameZh: "飓风长戟合成卷轴",
     localizedNameEn: "Hurricane Pike Recipe",
     cost: 350,
     isRecipe: false,
@@ -1992,7 +1992,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 103,
     name: "item_recipe_dagon",
-    localizedNameZh: "Dagon Recipe",
+    localizedNameZh: "达贡之神力合成卷轴",
     localizedNameEn: "Dagon Recipe",
     cost: 1150,
     isRecipe: false,
@@ -2020,7 +2020,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 201,
     name: "item_dagon_2",
-    localizedNameZh: "Dagon",
+    localizedNameZh: "达贡之神力",
     localizedNameEn: "Dagon",
     cost: 4200,
     isRecipe: false,
@@ -2034,7 +2034,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 202,
     name: "item_dagon_3",
-    localizedNameZh: "Dagon",
+    localizedNameZh: "达贡之神力",
     localizedNameEn: "Dagon",
     cost: 5350,
     isRecipe: false,
@@ -2048,7 +2048,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 203,
     name: "item_dagon_4",
-    localizedNameZh: "Dagon",
+    localizedNameZh: "达贡之神力",
     localizedNameEn: "Dagon",
     cost: 6500,
     isRecipe: false,
@@ -2062,7 +2062,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 204,
     name: "item_dagon_5",
-    localizedNameZh: "Dagon",
+    localizedNameZh: "达贡之神力",
     localizedNameEn: "Dagon",
     cost: 7650,
     isRecipe: false,
@@ -2076,7 +2076,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 105,
     name: "item_recipe_necronomicon",
-    localizedNameZh: "Necronomicon Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Necronomicon Recipe",
     cost: 1250,
     isRecipe: false,
@@ -2090,7 +2090,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 106,
     name: "item_necronomicon",
-    localizedNameZh: "Necronomicon",
+    localizedNameZh: "死灵书",
     localizedNameEn: "Necronomicon",
     cost: 2050,
     isRecipe: false,
@@ -2104,7 +2104,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 193,
     name: "item_necronomicon_2",
-    localizedNameZh: "Necronomicon",
+    localizedNameZh: "死灵书",
     localizedNameEn: "Necronomicon",
     cost: 3300,
     isRecipe: false,
@@ -2118,7 +2118,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 194,
     name: "item_necronomicon_3",
-    localizedNameZh: "Necronomicon",
+    localizedNameZh: "死灵书",
     localizedNameEn: "Necronomicon",
     cost: 4550,
     isRecipe: false,
@@ -2146,7 +2146,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 270,
     name: "item_recipe_ultimate_scepter_2",
-    localizedNameZh: "Aghanim's Blessing Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Aghanim's Blessing Recipe",
     cost: 1600,
     isRecipe: false,
@@ -2160,7 +2160,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 271,
     name: "item_ultimate_scepter_2",
-    localizedNameZh: "Aghanim's Blessing",
+    localizedNameZh: "阿哈利姆福佑",
     localizedNameEn: "Aghanim's Blessing",
     cost: 5800,
     isRecipe: false,
@@ -2174,7 +2174,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 727,
     name: "item_ultimate_scepter_roshan",
-    localizedNameZh: "Aghanim's Blessing - Roshan",
+    localizedNameZh: "阿哈利姆福佑（肉山）",
     localizedNameEn: "Aghanim's Blessing - Roshan",
     cost: 5800,
     isRecipe: false,
@@ -2202,7 +2202,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 725,
     name: "item_aghanims_shard_roshan",
-    localizedNameZh: "Aghanim's Shard - Consumable",
+    localizedNameZh: "阿哈利姆魔晶（消耗品）",
     localizedNameEn: "Aghanim's Shard - Consumable",
     cost: 1400,
     isRecipe: false,
@@ -2216,7 +2216,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1850,
     name: "item_eldwurms_edda",
-    localizedNameZh: "Eldwurm's Edda",
+    localizedNameZh: "埃尔德武姆史诗",
     localizedNameEn: "Eldwurm's Edda",
     cost: 0,
     isRecipe: false,
@@ -2230,7 +2230,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 109,
     name: "item_recipe_refresher",
-    localizedNameZh: "Refresher Orb Recipe",
+    localizedNameZh: "刷新球合成卷轴",
     localizedNameEn: "Refresher Orb Recipe",
     cost: 1600,
     isRecipe: false,
@@ -2258,7 +2258,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 111,
     name: "item_recipe_assault",
-    localizedNameZh: "Assault Cuirass Recipe",
+    localizedNameZh: "强袭胸甲合成卷轴",
     localizedNameEn: "Assault Cuirass Recipe",
     cost: 1300,
     isRecipe: false,
@@ -2286,7 +2286,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 113,
     name: "item_recipe_heart",
-    localizedNameZh: "Heart of Tarrasque Recipe",
+    localizedNameZh: "恐鳌之心合成卷轴",
     localizedNameEn: "Heart of Tarrasque Recipe",
     cost: 600,
     isRecipe: false,
@@ -2314,7 +2314,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 115,
     name: "item_recipe_black_king_bar",
-    localizedNameZh: "Black King Bar Recipe",
+    localizedNameZh: "黑皇杖合成卷轴",
     localizedNameEn: "Black King Bar Recipe",
     cost: 1450,
     isRecipe: false,
@@ -2356,7 +2356,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 118,
     name: "item_recipe_shivas_guard",
-    localizedNameZh: "Shiva's Guard Recipe",
+    localizedNameZh: "希瓦守护合成卷轴",
     localizedNameEn: "Shiva's Guard Recipe",
     cost: 1350,
     isRecipe: false,
@@ -2398,7 +2398,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 122,
     name: "item_recipe_sphere",
-    localizedNameZh: "Linken's Sphere Recipe",
+    localizedNameZh: "林肯法球合成卷轴",
     localizedNameEn: "Linken's Sphere Recipe",
     cost: 600,
     isRecipe: false,
@@ -2426,7 +2426,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 221,
     name: "item_recipe_lotus_orb",
-    localizedNameZh: "Lotus Orb Recipe",
+    localizedNameZh: "清莲宝珠合成卷轴",
     localizedNameEn: "Lotus Orb Recipe",
     cost: 250,
     isRecipe: false,
@@ -2454,7 +2454,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 222,
     name: "item_recipe_meteor_hammer",
-    localizedNameZh: "Meteor Hammer Recipe",
+    localizedNameZh: "陨星锤合成卷轴",
     localizedNameEn: "Meteor Hammer Recipe",
     cost: 300,
     isRecipe: false,
@@ -2496,7 +2496,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 255,
     name: "item_recipe_aeon_disk",
-    localizedNameZh: "Aeon Disk Recipe",
+    localizedNameZh: "永恒之盘合成卷轴",
     localizedNameEn: "Aeon Disk Recipe",
     cost: 1200,
     isRecipe: false,
@@ -2510,7 +2510,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 256,
     name: "item_aeon_disk",
-    localizedNameZh: "Aeon Disk",
+    localizedNameZh: "永恒之盘",
     localizedNameEn: "Aeon Disk",
     cost: 3000,
     isRecipe: false,
@@ -2524,7 +2524,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 258,
     name: "item_recipe_kaya",
-    localizedNameZh: "Kaya Recipe",
+    localizedNameZh: "慧光合成卷轴",
     localizedNameEn: "Kaya Recipe",
     cost: 650,
     isRecipe: false,
@@ -2552,7 +2552,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 369,
     name: "item_trident",
-    localizedNameZh: "Trident",
+    localizedNameZh: "三叉戟",
     localizedNameEn: "Trident",
     cost: 6301,
     isRecipe: false,
@@ -2566,7 +2566,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 260,
     name: "item_refresher_shard",
-    localizedNameZh: "Refresher Shard",
+    localizedNameZh: "刷新球碎片",
     localizedNameEn: "Refresher Shard",
     cost: 1000,
     isRecipe: false,
@@ -2580,7 +2580,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 266,
     name: "item_recipe_spirit_vessel",
-    localizedNameZh: "Spirit Vessel Recipe",
+    localizedNameZh: "魂之灵龛合成卷轴",
     localizedNameEn: "Spirit Vessel Recipe",
     cost: 900,
     isRecipe: false,
@@ -2608,7 +2608,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1851,
     name: "item_recipe_essence_distiller",
-    localizedNameZh: "Essence Distiller Recipe",
+    localizedNameZh: "精华蒸馏器合成卷轴",
     localizedNameEn: "Essence Distiller Recipe",
     cost: 200,
     isRecipe: false,
@@ -2622,7 +2622,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1852,
     name: "item_essence_distiller",
-    localizedNameZh: "Essence Distiller",
+    localizedNameZh: "精华蒸馏器",
     localizedNameEn: "Essence Distiller",
     cost: 1775,
     isRecipe: false,
@@ -2650,7 +2650,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 243,
     name: "item_recipe_crimson_guard",
-    localizedNameZh: "Crimson Guard Recipe",
+    localizedNameZh: "赤红甲合成卷轴",
     localizedNameEn: "Crimson Guard Recipe",
     cost: 1050,
     isRecipe: false,
@@ -2678,7 +2678,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 126,
     name: "item_recipe_blade_mail",
-    localizedNameZh: "Blade Mail Recipe",
+    localizedNameZh: "刃甲合成卷轴",
     localizedNameEn: "Blade Mail Recipe",
     cost: 450,
     isRecipe: false,
@@ -2734,7 +2734,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 691,
     name: "item_recipe_eternal_shroud",
-    localizedNameZh: "Eternal Shroud Recipe",
+    localizedNameZh: "永世法衣合成卷轴",
     localizedNameEn: "Eternal Shroud Recipe",
     cost: 900,
     isRecipe: false,
@@ -2762,7 +2762,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1853,
     name: "item_recipe_consecrated_wraps",
-    localizedNameZh: "Consecrated Wraps Recipe",
+    localizedNameZh: "圣洁裹布合成卷轴",
     localizedNameEn: "Consecrated Wraps Recipe",
     cost: 700,
     isRecipe: false,
@@ -2776,7 +2776,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1854,
     name: "item_consecrated_wraps",
-    localizedNameZh: "Consecrated Wraps",
+    localizedNameZh: "圣洁裹布",
     localizedNameEn: "Consecrated Wraps",
     cost: 2600,
     isRecipe: false,
@@ -2790,7 +2790,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1855,
     name: "item_recipe_crellas_crozier",
-    localizedNameZh: "Crella's Crozier Recipe",
+    localizedNameZh: "克莱拉权杖合成卷轴",
     localizedNameEn: "Crella's Crozier Recipe",
     cost: 300,
     isRecipe: false,
@@ -2804,7 +2804,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1856,
     name: "item_crellas_crozier",
-    localizedNameZh: "Crella's Crozier",
+    localizedNameZh: "克莱拉主教权杖",
     localizedNameEn: "Crella's Crozier",
     cost: 4800,
     isRecipe: false,
@@ -2832,7 +2832,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 134,
     name: "item_recipe_monkey_king_bar",
-    localizedNameZh: "Monkey King Bar Recipe",
+    localizedNameZh: "金箍棒合成卷轴",
     localizedNameEn: "Monkey King Bar Recipe",
     cost: 900,
     isRecipe: false,
@@ -2888,7 +2888,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 140,
     name: "item_recipe_greater_crit",
-    localizedNameZh: "Daedalus Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Daedalus Recipe",
     cost: 900,
     isRecipe: false,
@@ -2902,7 +2902,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 141,
     name: "item_greater_crit",
-    localizedNameZh: "Daedalus",
+    localizedNameZh: "代达罗斯之殇",
     localizedNameEn: "Daedalus",
     cost: 5100,
     isRecipe: false,
@@ -2916,7 +2916,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 142,
     name: "item_recipe_basher",
-    localizedNameZh: "Skull Basher Recipe",
+    localizedNameZh: "碎颅锤合成卷轴",
     localizedNameEn: "Skull Basher Recipe",
     cost: 825,
     isRecipe: false,
@@ -2944,7 +2944,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 144,
     name: "item_recipe_bfury",
-    localizedNameZh: "Battle Fury Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Battle Fury Recipe",
     cost: 400,
     isRecipe: false,
@@ -2958,7 +2958,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 145,
     name: "item_bfury",
-    localizedNameZh: "Battle Fury",
+    localizedNameZh: "狂战斧",
     localizedNameEn: "Battle Fury",
     cost: 3900,
     isRecipe: false,
@@ -2972,7 +2972,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 146,
     name: "item_recipe_manta",
-    localizedNameZh: "Manta Style Recipe",
+    localizedNameZh: "幻影斧合成卷轴",
     localizedNameEn: "Manta Style Recipe",
     cost: 1550,
     isRecipe: false,
@@ -3000,7 +3000,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 148,
     name: "item_recipe_lesser_crit",
-    localizedNameZh: "Crystalys Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Crystalys Recipe",
     cost: 200,
     isRecipe: false,
@@ -3014,7 +3014,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 149,
     name: "item_lesser_crit",
-    localizedNameZh: "Crystalys",
+    localizedNameZh: "水晶剑",
     localizedNameEn: "Crystalys",
     cost: 2000,
     isRecipe: false,
@@ -3028,7 +3028,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 234,
     name: "item_recipe_dragon_lance",
-    localizedNameZh: "Dragon Lance Recipe",
+    localizedNameZh: "魔龙枪合成卷轴",
     localizedNameEn: "Dragon Lance Recipe",
     cost: 450,
     isRecipe: false,
@@ -3042,7 +3042,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 236,
     name: "item_dragon_lance",
-    localizedNameZh: "Dragon Lance",
+    localizedNameZh: "魔龙枪",
     localizedNameEn: "Dragon Lance",
     cost: 1900,
     isRecipe: false,
@@ -3056,7 +3056,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 150,
     name: "item_recipe_armlet",
-    localizedNameZh: "Armlet of Mordiggian Recipe",
+    localizedNameZh: "臂章合成卷轴",
     localizedNameEn: "Armlet of Mordiggian Recipe",
     cost: 625,
     isRecipe: false,
@@ -3070,7 +3070,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 151,
     name: "item_armlet",
-    localizedNameZh: "Armlet of Mordiggian",
+    localizedNameZh: "莫尔迪基安的臂章",
     localizedNameEn: "Armlet of Mordiggian",
     cost: 2500,
     isRecipe: false,
@@ -3084,7 +3084,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 152,
     name: "item_invis_sword",
-    localizedNameZh: "Shadow Blade",
+    localizedNameZh: "影刃",
     localizedNameEn: "Shadow Blade",
     cost: 3250,
     isRecipe: false,
@@ -3098,7 +3098,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 248,
     name: "item_recipe_silver_edge",
-    localizedNameZh: "Silver Edge Recipe",
+    localizedNameZh: "白银之锋合成卷轴",
     localizedNameEn: "Silver Edge Recipe",
     cost: 250,
     isRecipe: false,
@@ -3182,7 +3182,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 157,
     name: "item_recipe_mjollnir",
-    localizedNameZh: "Mjollnir Recipe",
+    localizedNameZh: "雷神之锤合成卷轴",
     localizedNameEn: "Mjollnir Recipe",
     cost: 550,
     isRecipe: false,
@@ -3224,7 +3224,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 161,
     name: "item_recipe_sange",
-    localizedNameZh: "Sange Recipe",
+    localizedNameZh: "散华合成卷轴",
     localizedNameEn: "Sange Recipe",
     cost: 650,
     isRecipe: false,
@@ -3252,7 +3252,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 163,
     name: "item_recipe_helm_of_the_dominator",
-    localizedNameZh: "Helm of the Dominator Recipe",
+    localizedNameZh: "支配头盔合成卷轴",
     localizedNameEn: "Helm of the Dominator Recipe",
     cost: 1125,
     isRecipe: false,
@@ -3280,7 +3280,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 633,
     name: "item_recipe_helm_of_the_overlord",
-    localizedNameZh: "Helm of the Overlord Recipe",
+    localizedNameZh: "统御头盔合成卷轴",
     localizedNameEn: "Helm of the Overlord Recipe",
     cost: 300,
     isRecipe: false,
@@ -3308,7 +3308,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 166,
     name: "item_maelstrom",
-    localizedNameZh: "Maelstrom",
+    localizedNameZh: "漩涡",
     localizedNameEn: "Maelstrom",
     cost: 2950,
     isRecipe: false,
@@ -3322,7 +3322,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1565,
     name: "item_recipe_gungir",
-    localizedNameZh: "Gleipnir Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Gleipnir Recipe",
     cost: 400,
     isRecipe: false,
@@ -3336,7 +3336,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1466,
     name: "item_gungir",
-    localizedNameZh: "Gleipnir",
+    localizedNameZh: "缚灵索",
     localizedNameEn: "Gleipnir",
     cost: 4650,
     isRecipe: false,
@@ -3364,7 +3364,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 169,
     name: "item_recipe_yasha",
-    localizedNameZh: "Yasha Recipe",
+    localizedNameZh: "夜叉合成卷轴",
     localizedNameEn: "Yasha Recipe",
     cost: 650,
     isRecipe: false,
@@ -3406,7 +3406,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 173,
     name: "item_recipe_diffusal_blade",
-    localizedNameZh: "Diffusal Blade Recipe",
+    localizedNameZh: "净魂之刃合成卷轴",
     localizedNameEn: "Diffusal Blade Recipe",
     cost: 1050,
     isRecipe: false,
@@ -3420,7 +3420,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 174,
     name: "item_diffusal_blade",
-    localizedNameZh: "Diffusal Blade",
+    localizedNameZh: "净魂之刃",
     localizedNameEn: "Diffusal Blade",
     cost: 2500,
     isRecipe: false,
@@ -3434,7 +3434,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1096,
     name: "item_recipe_disperser",
-    localizedNameZh: "Disperser Recipe",
+    localizedNameZh: "分散机合成卷轴",
     localizedNameEn: "Disperser Recipe",
     cost: 800,
     isRecipe: false,
@@ -3462,7 +3462,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 175,
     name: "item_recipe_ethereal_blade",
-    localizedNameZh: "Ethereal Blade Recipe",
+    localizedNameZh: "虚灵之刃合成卷轴",
     localizedNameEn: "Ethereal Blade Recipe",
     cost: 900,
     isRecipe: false,
@@ -3490,7 +3490,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 177,
     name: "item_recipe_soul_ring",
-    localizedNameZh: "Soul Ring Recipe",
+    localizedNameZh: "灵魂之戒合成卷轴",
     localizedNameEn: "Soul Ring Recipe",
     cost: 350,
     isRecipe: false,
@@ -3518,7 +3518,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 179,
     name: "item_recipe_arcane_boots",
-    localizedNameZh: "Arcane Boots Recipe",
+    localizedNameZh: "奥术鞋合成卷轴",
     localizedNameEn: "Arcane Boots Recipe",
     cost: 325,
     isRecipe: false,
@@ -3546,7 +3546,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 228,
     name: "item_recipe_octarine_core",
-    localizedNameZh: "Octarine Core Recipe",
+    localizedNameZh: "玲珑心合成卷轴",
     localizedNameEn: "Octarine Core Recipe",
     cost: 200,
     isRecipe: false,
@@ -3588,7 +3588,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 240,
     name: "item_blight_stone",
-    localizedNameZh: "Orb of Blight",
+    localizedNameZh: "枯萎之石",
     localizedNameEn: "Orb of Blight",
     cost: 300,
     isRecipe: false,
@@ -3616,7 +3616,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1575,
     name: "item_orb_of_frost",
-    localizedNameZh: "Orb of Frost",
+    localizedNameZh: "冰霜之球",
     localizedNameEn: "Orb of Frost",
     cost: 300,
     isRecipe: false,
@@ -3630,7 +3630,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 599,
     name: "item_recipe_falcon_blade",
-    localizedNameZh: "Falcon Blade Recipe",
+    localizedNameZh: "猎鹰战刃合成卷轴",
     localizedNameEn: "Falcon Blade Recipe",
     cost: 250,
     isRecipe: false,
@@ -3672,7 +3672,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 184,
     name: "item_recipe_ancient_janggo",
-    localizedNameZh: "Drum of Endurance Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Drum of Endurance Recipe",
     cost: 525,
     isRecipe: false,
@@ -3686,7 +3686,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 185,
     name: "item_ancient_janggo",
-    localizedNameZh: "Drum of Endurance",
+    localizedNameZh: "韧鼓",
     localizedNameEn: "Drum of Endurance",
     cost: 1625,
     isRecipe: false,
@@ -3728,7 +3728,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 227,
     name: "item_recipe_solar_crest",
-    localizedNameZh: "Solar Crest Recipe",
+    localizedNameZh: "炎阳纹章合成卷轴",
     localizedNameEn: "Solar Crest Recipe",
     cost: 500,
     isRecipe: false,
@@ -3756,7 +3756,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1127,
     name: "item_recipe_pavise",
-    localizedNameZh: "Pavise Recipe",
+    localizedNameZh: "圣盾合成卷轴",
     localizedNameEn: "Pavise Recipe",
     cost: 675,
     isRecipe: false,
@@ -3770,7 +3770,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1128,
     name: "item_pavise",
-    localizedNameZh: "Pavise",
+    localizedNameZh: "圣盾",
     localizedNameEn: "Pavise",
     cost: 1350,
     isRecipe: false,
@@ -3798,7 +3798,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 257,
     name: "item_tome_of_knowledge",
-    localizedNameZh: "Tome of Knowledge",
+    localizedNameZh: "知识之书",
     localizedNameEn: "Tome of Knowledge",
     cost: 75,
     isRecipe: false,
@@ -3812,7 +3812,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 189,
     name: "item_recipe_veil_of_discord",
-    localizedNameZh: "Veil of Discord Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Veil of Discord Recipe",
     cost: 350,
     isRecipe: false,
@@ -3826,7 +3826,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 190,
     name: "item_veil_of_discord",
-    localizedNameZh: "Veil of Discord",
+    localizedNameZh: "纷争面纱",
     localizedNameEn: "Veil of Discord",
     cost: 1700,
     isRecipe: false,
@@ -3840,7 +3840,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 910,
     name: "item_recipe_revenants_brooch",
-    localizedNameZh: "Revenant's Brooch Recipe",
+    localizedNameZh: "亡魂胸针合成卷轴",
     localizedNameEn: "Revenant's Brooch Recipe",
     cost: 650,
     isRecipe: false,
@@ -3868,7 +3868,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1805,
     name: "item_recipe_devastator",
-    localizedNameZh: "Parasma Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Parasma Recipe",
     cost: 400,
     isRecipe: false,
@@ -3882,7 +3882,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1806,
     name: "item_devastator",
-    localizedNameZh: "Parasma",
+    localizedNameZh: "圣契",
     localizedNameEn: "Parasma",
     cost: 5975,
     isRecipe: false,
@@ -3896,7 +3896,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 230,
     name: "item_recipe_guardian_greaves",
-    localizedNameZh: "Guardian Greaves Recipe",
+    localizedNameZh: "卫士胫甲合成卷轴",
     localizedNameEn: "Guardian Greaves Recipe",
     cost: 1175,
     isRecipe: false,
@@ -3924,7 +3924,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 205,
     name: "item_recipe_rod_of_atos",
-    localizedNameZh: "Rod of Atos Recipe",
+    localizedNameZh: "阿托斯之棍合成卷轴",
     localizedNameEn: "Rod of Atos Recipe",
     cost: 250,
     isRecipe: false,
@@ -3952,7 +3952,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 238,
     name: "item_recipe_iron_talon",
-    localizedNameZh: "Iron Talon Recipe",
+    localizedNameZh: "铁爪合成卷轴",
     localizedNameEn: "Iron Talon Recipe",
     cost: 125,
     isRecipe: false,
@@ -3966,7 +3966,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 239,
     name: "item_iron_talon",
-    localizedNameZh: "Iron Talon",
+    localizedNameZh: "铁爪",
     localizedNameEn: "Iron Talon",
     cost: 0,
     isRecipe: false,
@@ -3980,7 +3980,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 207,
     name: "item_recipe_abyssal_blade",
-    localizedNameZh: "Abyssal Blade Recipe",
+    localizedNameZh: "深渊之刃合成卷轴",
     localizedNameEn: "Abyssal Blade Recipe",
     cost: 1275,
     isRecipe: false,
@@ -4008,7 +4008,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 209,
     name: "item_recipe_heavens_halberd",
-    localizedNameZh: "Heaven's Halberd Recipe",
+    localizedNameZh: "天堂之戟合成卷轴",
     localizedNameEn: "Heaven's Halberd Recipe",
     cost: 450,
     isRecipe: false,
@@ -4078,7 +4078,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 253,
     name: "item_recipe_glimmer_cape",
-    localizedNameZh: "Glimmer Cape Recipe",
+    localizedNameZh: "微光披风合成卷轴",
     localizedNameEn: "Glimmer Cape Recipe",
     cost: 800,
     isRecipe: false,
@@ -4092,7 +4092,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 254,
     name: "item_glimmer_cape",
-    localizedNameZh: "Glimmer Cape",
+    localizedNameZh: "微光披风",
     localizedNameEn: "Glimmer Cape",
     cost: 2150,
     isRecipe: false,
@@ -4106,7 +4106,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1021,
     name: "item_river_painter",
-    localizedNameZh: "River Vial: Chrome",
+    localizedNameZh: "河水药瓶：铬",
     localizedNameEn: "River Vial: Chrome",
     cost: 0,
     isRecipe: false,
@@ -4120,7 +4120,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1022,
     name: "item_river_painter2",
-    localizedNameZh: "River Vial: Dry",
+    localizedNameZh: "河水药瓶：干涸",
     localizedNameEn: "River Vial: Dry",
     cost: 0,
     isRecipe: false,
@@ -4134,7 +4134,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1023,
     name: "item_river_painter3",
-    localizedNameZh: "River Vial: Slime",
+    localizedNameZh: "河水药瓶：粘液",
     localizedNameEn: "River Vial: Slime",
     cost: 0,
     isRecipe: false,
@@ -4148,7 +4148,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1024,
     name: "item_river_painter4",
-    localizedNameZh: "River Vial: Oil",
+    localizedNameZh: "河水药瓶：油",
     localizedNameEn: "River Vial: Oil",
     cost: 0,
     isRecipe: false,
@@ -4162,7 +4162,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1025,
     name: "item_river_painter5",
-    localizedNameZh: "River Vial: Electrified",
+    localizedNameZh: "河水药瓶：电化",
     localizedNameEn: "River Vial: Electrified",
     cost: 0,
     isRecipe: false,
@@ -4176,7 +4176,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1026,
     name: "item_river_painter6",
-    localizedNameZh: "River Vial: Potion",
+    localizedNameZh: "河水药瓶：药剂",
     localizedNameEn: "River Vial: Potion",
     cost: 0,
     isRecipe: false,
@@ -4190,7 +4190,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1027,
     name: "item_river_painter7",
-    localizedNameZh: "River Vial: Blood",
+    localizedNameZh: "河水药瓶：血",
     localizedNameEn: "River Vial: Blood",
     cost: 0,
     isRecipe: false,
@@ -4204,7 +4204,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1028,
     name: "item_mutation_tombstone",
-    localizedNameZh: "Tombstone",
+    localizedNameZh: "墓碑",
     localizedNameEn: "Tombstone",
     cost: 0,
     isRecipe: false,
@@ -4218,7 +4218,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1030,
     name: "item_pocket_tower",
-    localizedNameZh: "Pocket Tower",
+    localizedNameZh: "袖珍塔",
     localizedNameEn: "Pocket Tower",
     cost: 0,
     isRecipe: false,
@@ -4232,7 +4232,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1032,
     name: "item_pocket_roshan",
-    localizedNameZh: "Pocket Roshan",
+    localizedNameZh: "袖珍肉山",
     localizedNameEn: "Pocket Roshan",
     cost: 1000,
     isRecipe: false,
@@ -4246,7 +4246,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 287,
     name: "item_keen_optic",
-    localizedNameZh: "Keen Optic",
+    localizedNameZh: "锐利之眼",
     localizedNameEn: "Keen Optic",
     cost: 0,
     isRecipe: false,
@@ -4260,7 +4260,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 288,
     name: "item_grove_bow",
-    localizedNameZh: "Grove Bow",
+    localizedNameZh: "丛林之弓",
     localizedNameEn: "Grove Bow",
     cost: 0,
     isRecipe: false,
@@ -4274,7 +4274,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 289,
     name: "item_quickening_charm",
-    localizedNameZh: "Quickening Charm",
+    localizedNameZh: "加速护符",
     localizedNameEn: "Quickening Charm",
     cost: 0,
     isRecipe: false,
@@ -4316,7 +4316,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 292,
     name: "item_desolator_2",
-    localizedNameZh: "黯灭2",
+    localizedNameZh: "黯灭II",
     localizedNameEn: "Stygian Desolator",
     cost: 0,
     isRecipe: false,
@@ -4358,7 +4358,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 302,
     name: "item_elixer",
-    localizedNameZh: "Elixir",
+    localizedNameZh: "灵药",
     localizedNameEn: "Elixir",
     cost: 0,
     isRecipe: false,
@@ -4372,7 +4372,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 297,
     name: "item_vampire_fangs",
-    localizedNameZh: "Vampire Fangs",
+    localizedNameZh: "吸血鬼獠牙",
     localizedNameEn: "Vampire Fangs",
     cost: 0,
     isRecipe: false,
@@ -4386,7 +4386,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 829,
     name: "item_force_field",
-    localizedNameZh: "Arcanist's Armor",
+    localizedNameZh: "奥术师铠甲",
     localizedNameEn: "Arcanist's Armor",
     cost: 0,
     isRecipe: false,
@@ -4400,7 +4400,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 834,
     name: "item_black_powder_bag",
-    localizedNameZh: "Blast Rig",
+    localizedNameZh: "爆破装置",
     localizedNameEn: "Blast Rig",
     cost: 0,
     isRecipe: false,
@@ -4414,7 +4414,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 298,
     name: "item_craggy_coat",
-    localizedNameZh: "Craggy Coat",
+    localizedNameZh: "崎岖外衣",
     localizedNameEn: "Craggy Coat",
     cost: 0,
     isRecipe: false,
@@ -4428,7 +4428,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 299,
     name: "item_greater_faerie_fire",
-    localizedNameZh: "Greater Faerie Fire",
+    localizedNameZh: "大型仙灵之火",
     localizedNameEn: "Greater Faerie Fire",
     cost: 0,
     isRecipe: false,
@@ -4456,7 +4456,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 301,
     name: "item_mirror_shield",
-    localizedNameZh: "Mirror Shield",
+    localizedNameZh: "镜盾",
     localizedNameEn: "Mirror Shield",
     cost: 0,
     isRecipe: false,
@@ -4470,7 +4470,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 304,
     name: "item_ironwood_tree",
-    localizedNameZh: "Ironwood Tree",
+    localizedNameZh: "铁木之树",
     localizedNameEn: "Ironwood Tree",
     cost: 0,
     isRecipe: false,
@@ -4484,7 +4484,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 328,
     name: "item_mango_tree",
-    localizedNameZh: "Mango Tree",
+    localizedNameZh: "芒果果树",
     localizedNameEn: "Mango Tree",
     cost: 0,
     isRecipe: false,
@@ -4498,7 +4498,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 305,
     name: "item_royal_jelly",
-    localizedNameZh: "Royal Jelly",
+    localizedNameZh: "皇家蜂蜜",
     localizedNameEn: "Royal Jelly",
     cost: 0,
     isRecipe: false,
@@ -4512,7 +4512,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 306,
     name: "item_pupils_gift",
-    localizedNameZh: "Pupil's Gift",
+    localizedNameZh: "学徒的馈赠",
     localizedNameEn: "Pupil's Gift",
     cost: 0,
     isRecipe: false,
@@ -4526,7 +4526,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 307,
     name: "item_tome_of_aghanim",
-    localizedNameZh: "Tome of Aghanim",
+    localizedNameZh: "阿哈利姆之书",
     localizedNameEn: "Tome of Aghanim",
     cost: 0,
     isRecipe: false,
@@ -4540,7 +4540,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 308,
     name: "item_repair_kit",
-    localizedNameZh: "Repair Kit",
+    localizedNameZh: "修理包",
     localizedNameEn: "Repair Kit",
     cost: 0,
     isRecipe: false,
@@ -4568,7 +4568,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 310,
     name: "item_third_eye",
-    localizedNameZh: "Third Eye",
+    localizedNameZh: "第三只眼",
     localizedNameEn: "Third Eye",
     cost: 0,
     isRecipe: false,
@@ -4582,7 +4582,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 311,
     name: "item_spell_prism",
-    localizedNameZh: "Spell Prism",
+    localizedNameZh: "法术棱镜",
     localizedNameEn: "Spell Prism",
     cost: 0,
     isRecipe: false,
@@ -4596,7 +4596,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 325,
     name: "item_princes_knife",
-    localizedNameZh: "Prince's Knife",
+    localizedNameZh: "王子之刃",
     localizedNameEn: "Prince's Knife",
     cost: 0,
     isRecipe: false,
@@ -4610,7 +4610,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 330,
     name: "item_witless_shako",
-    localizedNameZh: "Witless Shako",
+    localizedNameZh: "愚者之帽",
     localizedNameEn: "Witless Shako",
     cost: 0,
     isRecipe: false,
@@ -4624,7 +4624,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 334,
     name: "item_imp_claw",
-    localizedNameZh: "Imp Claw",
+    localizedNameZh: "小鬼之爪",
     localizedNameEn: "Imp Claw",
     cost: 0,
     isRecipe: false,
@@ -4652,7 +4652,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 336,
     name: "item_spy_gadget",
-    localizedNameZh: "Telescope",
+    localizedNameZh: "望远镜",
     localizedNameEn: "Telescope",
     cost: 0,
     isRecipe: false,
@@ -4680,7 +4680,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 327,
     name: "item_helm_of_the_undying",
-    localizedNameZh: "Helm of the Undying",
+    localizedNameZh: "不朽之盔",
     localizedNameEn: "Helm of the Undying",
     cost: 0,
     isRecipe: false,
@@ -4708,7 +4708,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 313,
     name: "item_fusion_rune",
-    localizedNameZh: "Fusion Rune",
+    localizedNameZh: "融合符文",
     localizedNameEn: "Fusion Rune",
     cost: 0,
     isRecipe: false,
@@ -4722,7 +4722,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 354,
     name: "item_ocean_heart",
-    localizedNameZh: "Ocean Heart",
+    localizedNameZh: "海洋之心",
     localizedNameEn: "Ocean Heart",
     cost: 0,
     isRecipe: false,
@@ -4736,7 +4736,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1124,
     name: "item_spark_of_courage",
-    localizedNameZh: "Spark of Courage",
+    localizedNameZh: "勇气火花",
     localizedNameEn: "Spark of Courage",
     cost: 0,
     isRecipe: false,
@@ -4750,7 +4750,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 355,
     name: "item_broom_handle",
-    localizedNameZh: "Broom Handle",
+    localizedNameZh: "扫帚柄",
     localizedNameEn: "Broom Handle",
     cost: 0,
     isRecipe: false,
@@ -4778,7 +4778,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 357,
     name: "item_nether_shawl",
-    localizedNameZh: "Nether Shawl",
+    localizedNameZh: "冥界披肩",
     localizedNameEn: "Nether Shawl",
     cost: 0,
     isRecipe: false,
@@ -4806,7 +4806,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 359,
     name: "item_essence_ring",
-    localizedNameZh: "Essence Ring",
+    localizedNameZh: "精华指环",
     localizedNameEn: "Essence Ring",
     cost: 0,
     isRecipe: false,
@@ -4820,7 +4820,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 360,
     name: "item_clumsy_net",
-    localizedNameZh: "Clumsy Net",
+    localizedNameZh: "笨拙捕网",
     localizedNameEn: "Clumsy Net",
     cost: 0,
     isRecipe: false,
@@ -4876,7 +4876,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 364,
     name: "item_havoc_hammer",
-    localizedNameZh: "Havoc Hammer",
+    localizedNameZh: "浩劫之锤",
     localizedNameEn: "Havoc Hammer",
     cost: 0,
     isRecipe: false,
@@ -4890,7 +4890,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 365,
     name: "item_panic_button",
-    localizedNameZh: "Magic Lamp",
+    localizedNameZh: "魔法神灯",
     localizedNameEn: "Magic Lamp",
     cost: 0,
     isRecipe: false,
@@ -4904,7 +4904,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 366,
     name: "item_apex",
-    localizedNameZh: "Apex",
+    localizedNameZh: "巅峰",
     localizedNameEn: "Apex",
     cost: 0,
     isRecipe: false,
@@ -4918,7 +4918,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 367,
     name: "item_ballista",
-    localizedNameZh: "Ballista",
+    localizedNameZh: "弩炮",
     localizedNameEn: "Ballista",
     cost: 0,
     isRecipe: false,
@@ -4932,7 +4932,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 368,
     name: "item_woodland_striders",
-    localizedNameZh: "Woodland Striders",
+    localizedNameZh: "林地行者",
     localizedNameEn: "Woodland Striders",
     cost: 0,
     isRecipe: false,
@@ -4946,7 +4946,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 275,
     name: "item_recipe_trident",
-    localizedNameZh: "Trident Recipe",
+    localizedNameZh: "合成卷轴",
     localizedNameEn: "Trident Recipe",
     cost: 1,
     isRecipe: false,
@@ -4960,7 +4960,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 370,
     name: "item_demonicon",
-    localizedNameZh: "Book of the Dead",
+    localizedNameZh: "亡灵之书",
     localizedNameEn: "Book of the Dead",
     cost: 0,
     isRecipe: false,
@@ -4988,7 +4988,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 372,
     name: "item_pirate_hat",
-    localizedNameZh: "Pirate Hat",
+    localizedNameZh: "海盗帽",
     localizedNameEn: "Pirate Hat",
     cost: 0,
     isRecipe: false,
@@ -5002,7 +5002,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 374,
     name: "item_ex_machina",
-    localizedNameZh: "Ex Machina",
+    localizedNameZh: "机械降神",
     localizedNameEn: "Ex Machina",
     cost: 0,
     isRecipe: false,
@@ -5016,7 +5016,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 375,
     name: "item_faded_broach",
-    localizedNameZh: "Faded Broach",
+    localizedNameZh: "褪色胸针",
     localizedNameEn: "Faded Broach",
     cost: 0,
     isRecipe: false,
@@ -5044,7 +5044,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 377,
     name: "item_minotaur_horn",
-    localizedNameZh: "Minotaur Horn",
+    localizedNameZh: "牛头人号角",
     localizedNameEn: "Minotaur Horn",
     cost: 0,
     isRecipe: false,
@@ -5072,7 +5072,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 379,
     name: "item_the_leveller",
-    localizedNameZh: "The Leveller",
+    localizedNameZh: "平整者",
     localizedNameEn: "The Leveller",
     cost: 0,
     isRecipe: false,
@@ -5114,7 +5114,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 565,
     name: "item_chipped_vest",
-    localizedNameZh: "Chipped Vest",
+    localizedNameZh: "破碎背心",
     localizedNameEn: "Chipped Vest",
     cost: 0,
     isRecipe: false,
@@ -5142,7 +5142,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 574,
     name: "item_cloak_of_flames",
-    localizedNameZh: "Cloak of Flames",
+    localizedNameZh: "火焰斗篷",
     localizedNameEn: "Cloak of Flames",
     cost: 0,
     isRecipe: false,
@@ -5226,7 +5226,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 676,
     name: "item_ceremonial_robe",
-    localizedNameZh: "Ceremonial Robe",
+    localizedNameZh: "仪式长袍",
     localizedNameEn: "Ceremonial Robe",
     cost: 0,
     isRecipe: false,
@@ -5240,7 +5240,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 686,
     name: "item_quicksilver_amulet",
-    localizedNameZh: "Quicksilver Amulet",
+    localizedNameZh: "水银护符",
     localizedNameEn: "Quicksilver Amulet",
     cost: 0,
     isRecipe: false,
@@ -5268,7 +5268,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 678,
     name: "item_giants_ring",
-    localizedNameZh: "Giant's Ring",
+    localizedNameZh: "巨人之戒",
     localizedNameEn: "Giant's Ring",
     cost: 0,
     isRecipe: false,
@@ -5296,7 +5296,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 589,
     name: "item_mysterious_hat",
-    localizedNameZh: "Fairy's Trinket",
+    localizedNameZh: "仙灵饰物",
     localizedNameEn: "Fairy's Trinket",
     cost: 0,
     isRecipe: false,
@@ -5310,7 +5310,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 825,
     name: "item_ascetic_cap",
-    localizedNameZh: "Ascetic's Cap",
+    localizedNameZh: "苦行者之帽",
     localizedNameEn: "Ascetic's Cap",
     cost: 0,
     isRecipe: false,
@@ -5324,7 +5324,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 828,
     name: "item_misericorde",
-    localizedNameZh: "Brigand's Blade",
+    localizedNameZh: "强盗之刃",
     localizedNameEn: "Brigand's Blade",
     cost: 0,
     isRecipe: false,
@@ -5338,7 +5338,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 837,
     name: "item_heavy_blade",
-    localizedNameZh: "Witchbane",
+    localizedNameZh: "破法之刃",
     localizedNameEn: "Witchbane",
     cost: 0,
     isRecipe: false,
@@ -5352,7 +5352,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 838,
     name: "item_unstable_wand",
-    localizedNameZh: "Pig Pole",
+    localizedNameZh: "猪竿",
     localizedNameEn: "Pig Pole",
     cost: 0,
     isRecipe: false,
@@ -5366,7 +5366,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 840,
     name: "item_pogo_stick",
-    localizedNameZh: "Tumbler's Toy",
+    localizedNameZh: "不倒翁玩具",
     localizedNameEn: "Tumbler's Toy",
     cost: 0,
     isRecipe: false,
@@ -5380,7 +5380,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 835,
     name: "item_paintball",
-    localizedNameZh: "Fae Grenade",
+    localizedNameZh: "仙灵手雷",
     localizedNameEn: "Fae Grenade",
     cost: 0,
     isRecipe: false,
@@ -5394,7 +5394,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 945,
     name: "item_seeds_of_serenity",
-    localizedNameZh: "Seeds of Serenity",
+    localizedNameZh: "宁静种子",
     localizedNameEn: "Seeds of Serenity",
     cost: 0,
     isRecipe: false,
@@ -5408,7 +5408,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 946,
     name: "item_lance_of_pursuit",
-    localizedNameZh: "Lance of Pursuit",
+    localizedNameZh: "追猎长矛",
     localizedNameEn: "Lance of Pursuit",
     cost: 0,
     isRecipe: false,
@@ -5422,7 +5422,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 947,
     name: "item_occult_bracelet",
-    localizedNameZh: "Occult Bracelet",
+    localizedNameZh: "神秘手镯",
     localizedNameEn: "Occult Bracelet",
     cost: 0,
     isRecipe: false,
@@ -5436,7 +5436,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 949,
     name: "item_ogre_seal_totem",
-    localizedNameZh: "Ogre Seal Totem",
+    localizedNameZh: "食人魔海豹图腾",
     localizedNameEn: "Ogre Seal Totem",
     cost: 0,
     isRecipe: false,
@@ -5450,7 +5450,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1101,
     name: "item_recipe_harpoon",
-    localizedNameZh: "Harpoon Recipe",
+    localizedNameZh: "鱼叉合成卷轴",
     localizedNameEn: "Harpoon Recipe",
     cost: 1000,
     isRecipe: false,
@@ -5478,7 +5478,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 950,
     name: "item_defiant_shell",
-    localizedNameZh: "Defiant Shell",
+    localizedNameZh: "抗争之壳",
     localizedNameEn: "Defiant Shell",
     cost: 0,
     isRecipe: false,
@@ -5520,7 +5520,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 4300,
     name: "item_ofrenda",
-    localizedNameZh: "Beloved Memory",
+    localizedNameZh: "挚爱回忆",
     localizedNameEn: "Beloved Memory",
     cost: 0,
     isRecipe: false,
@@ -5534,7 +5534,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 4301,
     name: "item_ofrenda_shovel",
-    localizedNameZh: "Scrying Shovel",
+    localizedNameZh: "占卜铲",
     localizedNameEn: "Scrying Shovel",
     cost: 0,
     isRecipe: false,
@@ -5548,7 +5548,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 4302,
     name: "item_ofrenda_pledge",
-    localizedNameZh: "Forebearer's Fortune",
+    localizedNameZh: "先祖馈赠",
     localizedNameEn: "Forebearer's Fortune",
     cost: 0,
     isRecipe: false,
@@ -5562,7 +5562,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1090,
     name: "item_muertas_gun",
-    localizedNameZh: "Mercy & Grace",
+    localizedNameZh: "慈悲与恩典",
     localizedNameEn: "Mercy & Grace",
     cost: 0,
     isRecipe: false,
@@ -5576,7 +5576,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2091,
     name: "item_tier1_token",
-    localizedNameZh: "Tier 1 Token",
+    localizedNameZh: "一级中立代币",
     localizedNameEn: "Tier 1 Token",
     cost: 0,
     isRecipe: false,
@@ -5590,7 +5590,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2092,
     name: "item_tier2_token",
-    localizedNameZh: "Tier 2 Token",
+    localizedNameZh: "二级中立代币",
     localizedNameEn: "Tier 2 Token",
     cost: 0,
     isRecipe: false,
@@ -5604,7 +5604,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2093,
     name: "item_tier3_token",
-    localizedNameZh: "Tier 3 Token",
+    localizedNameZh: "三级中立代币",
     localizedNameEn: "Tier 3 Token",
     cost: 0,
     isRecipe: false,
@@ -5618,7 +5618,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2094,
     name: "item_tier4_token",
-    localizedNameZh: "Tier 4 Token",
+    localizedNameZh: "四级中立代币",
     localizedNameEn: "Tier 4 Token",
     cost: 0,
     isRecipe: false,
@@ -5632,7 +5632,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2095,
     name: "item_tier5_token",
-    localizedNameZh: "Tier 5 Token",
+    localizedNameZh: "五级中立代币",
     localizedNameEn: "Tier 5 Token",
     cost: 0,
     isRecipe: false,
@@ -5646,7 +5646,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2096,
     name: "item_vindicators_axe",
-    localizedNameZh: "Vindicator's Axe",
+    localizedNameZh: "复仇者之斧",
     localizedNameEn: "Vindicator's Axe",
     cost: 0,
     isRecipe: false,
@@ -5660,7 +5660,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2097,
     name: "item_duelist_gloves",
-    localizedNameZh: "Duelist Gloves",
+    localizedNameZh: "决斗者手套",
     localizedNameEn: "Duelist Gloves",
     cost: 0,
     isRecipe: false,
@@ -5674,7 +5674,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1156,
     name: "item_ancient_guardian",
-    localizedNameZh: "Ancient Guardian",
+    localizedNameZh: "远古守护者",
     localizedNameEn: "Ancient Guardian",
     cost: 0,
     isRecipe: false,
@@ -5688,7 +5688,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1157,
     name: "item_safety_bubble",
-    localizedNameZh: "Safety Bubble",
+    localizedNameZh: "安全气泡",
     localizedNameEn: "Safety Bubble",
     cost: 0,
     isRecipe: false,
@@ -5716,7 +5716,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1159,
     name: "item_nemesis_curse",
-    localizedNameZh: "Nemesis Curse",
+    localizedNameZh: "复仇诅咒",
     localizedNameEn: "Nemesis Curse",
     cost: 0,
     isRecipe: false,
@@ -5730,7 +5730,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1160,
     name: "item_avianas_feather",
-    localizedNameZh: "Aviana's Feather",
+    localizedNameZh: "艾维娜之羽",
     localizedNameEn: "Aviana's Feather",
     cost: 0,
     isRecipe: false,
@@ -5744,7 +5744,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1161,
     name: "item_unwavering_condition",
-    localizedNameZh: "Unwavering Condition",
+    localizedNameZh: "坚定状态",
     localizedNameEn: "Unwavering Condition",
     cost: 0,
     isRecipe: false,
@@ -5758,7 +5758,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2190,
     name: "item_dandelion_amulet",
-    localizedNameZh: "Dandelion Amulet",
+    localizedNameZh: "蒲公英护符",
     localizedNameEn: "Dandelion Amulet",
     cost: 0,
     isRecipe: false,
@@ -5772,7 +5772,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2192,
     name: "item_martyrs_plate",
-    localizedNameZh: "Martyr's Plate",
+    localizedNameZh: "殉道者板甲",
     localizedNameEn: "Martyr's Plate",
     cost: 0,
     isRecipe: false,
@@ -5786,7 +5786,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 2193,
     name: "item_gossamer_cape",
-    localizedNameZh: "Gossamer Cape",
+    localizedNameZh: "薄纱披风",
     localizedNameEn: "Gossamer Cape",
     cost: 0,
     isRecipe: false,
@@ -5800,7 +5800,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1167,
     name: "item_light_collector",
-    localizedNameZh: "Light Collector",
+    localizedNameZh: "光之收集者",
     localizedNameEn: "Light Collector",
     cost: 0,
     isRecipe: false,
@@ -5814,7 +5814,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1168,
     name: "item_rattlecage",
-    localizedNameZh: "Rattlecage",
+    localizedNameZh: "震响之笼",
     localizedNameEn: "Rattlecage",
     cost: 0,
     isRecipe: false,
@@ -5828,7 +5828,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1803,
     name: "item_doubloon",
-    localizedNameZh: "Doubloon",
+    localizedNameZh: "达布隆金币",
     localizedNameEn: "Doubloon",
     cost: 0,
     isRecipe: false,
@@ -5842,7 +5842,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1804,
     name: "item_roshans_banner",
-    localizedNameZh: "Roshan's Banner",
+    localizedNameZh: "肉山旗帜",
     localizedNameEn: "Roshan's Banner",
     cost: 0,
     isRecipe: false,
@@ -5856,7 +5856,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1440,
     name: "item_black_grimoire",
-    localizedNameZh: "Black Grimoire\\n(Warlock)",
+    localizedNameZh: "黑暗魔典",
     localizedNameEn: "Black Grimoire\\n(Warlock)",
     cost: 0,
     isRecipe: false,
@@ -5870,7 +5870,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1441,
     name: "item_grisgris",
-    localizedNameZh: "Gris-Gris",
+    localizedNameZh: "格里斯护符",
     localizedNameEn: "Gris-Gris",
     cost: 0,
     isRecipe: false,
@@ -5884,7 +5884,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1576,
     name: "item_enhancement_vast",
-    localizedNameZh: "Vast",
+    localizedNameZh: "巨大",
     localizedNameEn: "Vast",
     cost: 0,
     isRecipe: false,
@@ -5898,7 +5898,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1577,
     name: "item_enhancement_quickened",
-    localizedNameZh: "Quickened",
+    localizedNameZh: "迅捷",
     localizedNameEn: "Quickened",
     cost: 0,
     isRecipe: false,
@@ -5912,7 +5912,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1581,
     name: "item_enhancement_audacious",
-    localizedNameZh: "Audacious",
+    localizedNameZh: "无畏",
     localizedNameEn: "Audacious",
     cost: 0,
     isRecipe: false,
@@ -5926,7 +5926,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1583,
     name: "item_enhancement_mystical",
-    localizedNameZh: "Mystical",
+    localizedNameZh: "神秘",
     localizedNameEn: "Mystical",
     cost: 0,
     isRecipe: false,
@@ -5940,7 +5940,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1584,
     name: "item_enhancement_alert",
-    localizedNameZh: "Alert",
+    localizedNameZh: "警觉",
     localizedNameEn: "Alert",
     cost: 0,
     isRecipe: false,
@@ -5954,7 +5954,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1585,
     name: "item_enhancement_brawny",
-    localizedNameZh: "Brawny",
+    localizedNameZh: "强壮",
     localizedNameEn: "Brawny",
     cost: 0,
     isRecipe: false,
@@ -5968,7 +5968,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1586,
     name: "item_enhancement_tough",
-    localizedNameZh: "Tough",
+    localizedNameZh: "坚韧",
     localizedNameEn: "Tough",
     cost: 0,
     isRecipe: false,
@@ -5982,7 +5982,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1587,
     name: "item_enhancement_feverish",
-    localizedNameZh: "Feverish",
+    localizedNameZh: "狂热",
     localizedNameEn: "Feverish",
     cost: 0,
     isRecipe: false,
@@ -5996,7 +5996,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1588,
     name: "item_enhancement_fleetfooted",
-    localizedNameZh: "Fleetfooted",
+    localizedNameZh: "疾步",
     localizedNameEn: "Fleetfooted",
     cost: 0,
     isRecipe: false,
@@ -6010,7 +6010,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1589,
     name: "item_enhancement_crude",
-    localizedNameZh: "Crude",
+    localizedNameZh: "粗糙",
     localizedNameEn: "Crude",
     cost: 0,
     isRecipe: false,
@@ -6024,7 +6024,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1590,
     name: "item_enhancement_boundless",
-    localizedNameZh: "Boundless",
+    localizedNameZh: "无限",
     localizedNameEn: "Boundless",
     cost: 0,
     isRecipe: false,
@@ -6038,7 +6038,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1591,
     name: "item_enhancement_wise",
-    localizedNameZh: "Wise",
+    localizedNameZh: "智慧",
     localizedNameEn: "Wise",
     cost: 0,
     isRecipe: false,
@@ -6052,7 +6052,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1592,
     name: "item_enhancement_timeless",
-    localizedNameZh: "Timeless",
+    localizedNameZh: "永恒",
     localizedNameEn: "Timeless",
     cost: 0,
     isRecipe: false,
@@ -6066,7 +6066,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1593,
     name: "item_enhancement_greedy",
-    localizedNameZh: "Greedy",
+    localizedNameZh: "贪婪",
     localizedNameEn: "Greedy",
     cost: 0,
     isRecipe: false,
@@ -6080,7 +6080,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1594,
     name: "item_enhancement_vampiric",
-    localizedNameZh: "Vampiric",
+    localizedNameZh: "吸血",
     localizedNameEn: "Vampiric",
     cost: 0,
     isRecipe: false,
@@ -6094,7 +6094,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1595,
     name: "item_enhancement_keen_eyed",
-    localizedNameZh: "Keen-eyed",
+    localizedNameZh: "敏锐",
     localizedNameEn: "Keen-eyed",
     cost: 0,
     isRecipe: false,
@@ -6108,7 +6108,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1596,
     name: "item_enhancement_evolved",
-    localizedNameZh: "Evolved",
+    localizedNameZh: "进化",
     localizedNameEn: "Evolved",
     cost: 0,
     isRecipe: false,
@@ -6122,7 +6122,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1597,
     name: "item_enhancement_titanic",
-    localizedNameZh: "Titanic",
+    localizedNameZh: "泰坦",
     localizedNameEn: "Titanic",
     cost: 0,
     isRecipe: false,
@@ -6136,7 +6136,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1598,
     name: "item_unrelenting_eye",
-    localizedNameZh: "Unrelenting Eye",
+    localizedNameZh: "无情之眼",
     localizedNameEn: "Unrelenting Eye",
     cost: 0,
     isRecipe: false,
@@ -6150,7 +6150,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1599,
     name: "item_mana_draught",
-    localizedNameZh: "Mana Draught",
+    localizedNameZh: "法力药剂",
     localizedNameEn: "Mana Draught",
     cost: 0,
     isRecipe: false,
@@ -6164,7 +6164,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1600,
     name: "item_rippers_lash",
-    localizedNameZh: "Ripper's Lash",
+    localizedNameZh: "撕裂者之鞭",
     localizedNameEn: "Ripper's Lash",
     cost: 0,
     isRecipe: false,
@@ -6178,7 +6178,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1601,
     name: "item_crippling_crossbow",
-    localizedNameZh: "Crippling Crossbow",
+    localizedNameZh: "致残弩",
     localizedNameEn: "Crippling Crossbow",
     cost: 0,
     isRecipe: false,
@@ -6192,7 +6192,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1602,
     name: "item_gale_guard",
-    localizedNameZh: "Gale Guard",
+    localizedNameZh: "狂风护甲",
     localizedNameEn: "Gale Guard",
     cost: 0,
     isRecipe: false,
@@ -6206,7 +6206,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1603,
     name: "item_gunpowder_gauntlets",
-    localizedNameZh: "Gunpowder Gauntlet",
+    localizedNameZh: "火药护手",
     localizedNameEn: "Gunpowder Gauntlet",
     cost: 0,
     isRecipe: false,
@@ -6220,7 +6220,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1604,
     name: "item_searing_signet",
-    localizedNameZh: "Searing Signet",
+    localizedNameZh: "灼热印记",
     localizedNameEn: "Searing Signet",
     cost: 0,
     isRecipe: false,
@@ -6234,7 +6234,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1605,
     name: "item_serrated_shiv",
-    localizedNameZh: "Serrated Shiv",
+    localizedNameZh: "锯齿小刀",
     localizedNameEn: "Serrated Shiv",
     cost: 0,
     isRecipe: false,
@@ -6248,7 +6248,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1606,
     name: "item_polliwog_charm",
-    localizedNameZh: "Pollywog Charm",
+    localizedNameZh: "蝌蚪护符",
     localizedNameEn: "Pollywog Charm",
     cost: 0,
     isRecipe: false,
@@ -6262,7 +6262,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1607,
     name: "item_magnifying_monocle",
-    localizedNameZh: "Magnifying Monocle",
+    localizedNameZh: "放大镜",
     localizedNameEn: "Magnifying Monocle",
     cost: 0,
     isRecipe: false,
@@ -6276,7 +6276,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1608,
     name: "item_pyrrhic_cloak",
-    localizedNameZh: "Pyrrhic Cloak",
+    localizedNameZh: "惨胜披风",
     localizedNameEn: "Pyrrhic Cloak",
     cost: 0,
     isRecipe: false,
@@ -6290,7 +6290,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1609,
     name: "item_madstone_bundle",
-    localizedNameZh: "Madstone Bundle",
+    localizedNameZh: "狂石包裹",
     localizedNameEn: "Madstone Bundle",
     cost: 0,
     isRecipe: false,
@@ -6304,7 +6304,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1637,
     name: "item_kobold_cup",
-    localizedNameZh: "Kobold Cup",
+    localizedNameZh: "狗头人酒杯",
     localizedNameEn: "Kobold Cup",
     cost: 0,
     isRecipe: false,
@@ -6318,7 +6318,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1638,
     name: "item_dormant_curio",
-    localizedNameZh: "Dormant Curio",
+    localizedNameZh: "休眠古玩",
     localizedNameEn: "Dormant Curio",
     cost: 0,
     isRecipe: false,
@@ -6332,7 +6332,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1639,
     name: "item_sisters_shroud",
-    localizedNameZh: "Sister's Shroud",
+    localizedNameZh: "姐妹裹尸布",
     localizedNameEn: "Sister's Shroud",
     cost: 0,
     isRecipe: false,
@@ -6346,7 +6346,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1640,
     name: "item_jidi_pollen_bag",
-    localizedNameZh: "Jidi Pollen Bag",
+    localizedNameZh: "吉迪花粉袋",
     localizedNameEn: "Jidi Pollen Bag",
     cost: 0,
     isRecipe: false,
@@ -6360,7 +6360,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1641,
     name: "item_outworld_staff",
-    localizedNameZh: "Outworld Staff",
+    localizedNameZh: "异界法杖",
     localizedNameEn: "Outworld Staff",
     cost: 0,
     isRecipe: false,
@@ -6374,7 +6374,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1642,
     name: "item_dezun_bloodrite",
-    localizedNameZh: "Dezun Bloodrite",
+    localizedNameZh: "德尊血仪",
     localizedNameEn: "Dezun Bloodrite",
     cost: 0,
     isRecipe: false,
@@ -6388,7 +6388,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1643,
     name: "item_giant_maul",
-    localizedNameZh: "Giant's Maul",
+    localizedNameZh: "巨人之槌",
     localizedNameEn: "Giant's Maul",
     cost: 0,
     isRecipe: false,
@@ -6402,7 +6402,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1644,
     name: "item_divine_regalia",
-    localizedNameZh: "Divine Regalia",
+    localizedNameZh: "神圣王权",
     localizedNameEn: "Divine Regalia",
     cost: 0,
     isRecipe: false,
@@ -6416,7 +6416,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1645,
     name: "item_divine_regalia_broken",
-    localizedNameZh: "Disgraced Regalia",
+    localizedNameZh: "耻辱王权",
     localizedNameEn: "Disgraced Regalia",
     cost: 0,
     isRecipe: false,
@@ -6430,7 +6430,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1647,
     name: "item_enhancement_fierce",
-    localizedNameZh: "Fierce",
+    localizedNameZh: "凶猛",
     localizedNameEn: "Fierce",
     cost: 0,
     isRecipe: false,
@@ -6444,7 +6444,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1648,
     name: "item_enhancement_dominant",
-    localizedNameZh: "Dominant",
+    localizedNameZh: "支配",
     localizedNameEn: "Dominant",
     cost: 0,
     isRecipe: false,
@@ -6458,7 +6458,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1649,
     name: "item_enhancement_restorative",
-    localizedNameZh: "Restorative",
+    localizedNameZh: "恢复",
     localizedNameEn: "Restorative",
     cost: 0,
     isRecipe: false,
@@ -6472,7 +6472,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1650,
     name: "item_enhancement_thick",
-    localizedNameZh: "Thick",
+    localizedNameZh: "厚重",
     localizedNameEn: "Thick",
     cost: 0,
     isRecipe: false,
@@ -6486,7 +6486,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1651,
     name: "item_enhancement_curious",
-    localizedNameZh: "Unleashed",
+    localizedNameZh: "释放",
     localizedNameEn: "Unleashed",
     cost: 0,
     isRecipe: false,
@@ -6500,7 +6500,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1652,
     name: "item_furion_gold_bag",
-    localizedNameZh: "Bag of Gold",
+    localizedNameZh: "金币袋",
     localizedNameEn: "Bag of Gold",
     cost: 0,
     isRecipe: false,
@@ -6528,7 +6528,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1858,
     name: "item_hydras_breath",
-    localizedNameZh: "Hydra's Breath",
+    localizedNameZh: "多头蛇吐息",
     localizedNameEn: "Hydra's Breath",
     cost: 5900,
     isRecipe: false,
@@ -6542,7 +6542,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1716,
     name: "item_weighted_dice",
-    localizedNameZh: "Weighted Dice",
+    localizedNameZh: "灌铅骰子",
     localizedNameEn: "Weighted Dice",
     cost: 0,
     isRecipe: false,
@@ -6556,7 +6556,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1717,
     name: "item_ash_legion_shield",
-    localizedNameZh: "Ash Legion Shield",
+    localizedNameZh: "灰烬军团之盾",
     localizedNameEn: "Ash Legion Shield",
     cost: 0,
     isRecipe: false,
@@ -6570,7 +6570,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1718,
     name: "item_riftshadow_prism",
-    localizedNameZh: "Riftshadow Prism",
+    localizedNameZh: "裂影棱镜",
     localizedNameEn: "Riftshadow Prism",
     cost: 0,
     isRecipe: false,
@@ -6584,7 +6584,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1719,
     name: "item_metamorphic_mandible",
-    localizedNameZh: "Metamorphic Mandible",
+    localizedNameZh: "变形之颚",
     localizedNameEn: "Metamorphic Mandible",
     cost: 0,
     isRecipe: false,
@@ -6598,7 +6598,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1720,
     name: "item_idol_of_screeauk",
-    localizedNameZh: "Idol of Scree'auk",
+    localizedNameZh: "斯克里奥克偶像",
     localizedNameEn: "Idol of Scree'auk",
     cost: 0,
     isRecipe: false,
@@ -6612,7 +6612,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1721,
     name: "item_flayers_bota",
-    localizedNameZh: "Flayer's Bota",
+    localizedNameZh: "剥皮者之靴",
     localizedNameEn: "Flayer's Bota",
     cost: 0,
     isRecipe: false,
@@ -6626,7 +6626,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1859,
     name: "item_spellslinger",
-    localizedNameZh: "Spellslinger",
+    localizedNameZh: "法术投掷者",
     localizedNameEn: "Spellslinger",
     cost: 0,
     isRecipe: false,
@@ -6640,7 +6640,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1860,
     name: "item_prophets_pendulum",
-    localizedNameZh: "Prophet's Pendulum",
+    localizedNameZh: "先知摆锤",
     localizedNameEn: "Prophet's Pendulum",
     cost: 0,
     isRecipe: false,
@@ -6654,7 +6654,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1861,
     name: "item_stonefeather_satchel",
-    localizedNameZh: "Stonefeather Satchel",
+    localizedNameZh: "石羽背包",
     localizedNameEn: "Stonefeather Satchel",
     cost: 0,
     isRecipe: false,
@@ -6668,7 +6668,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1862,
     name: "item_enchanters_bauble",
-    localizedNameZh: "Enchanter's Bauble",
+    localizedNameZh: "附魔师玩物",
     localizedNameEn: "Enchanter's Bauble",
     cost: 0,
     isRecipe: false,
@@ -6682,7 +6682,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1863,
     name: "item_harmonizer",
-    localizedNameZh: "Harmonizer",
+    localizedNameZh: "协调者",
     localizedNameEn: "Harmonizer",
     cost: 0,
     isRecipe: false,
@@ -6696,7 +6696,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1864,
     name: "item_conjurers_catalyst",
-    localizedNameZh: "Conjurer's Catalyst",
+    localizedNameZh: "魔术师催化剂",
     localizedNameEn: "Conjurer's Catalyst",
     cost: 0,
     isRecipe: false,
@@ -6710,7 +6710,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1865,
     name: "item_enhancement_vital",
-    localizedNameZh: "Vital",
+    localizedNameZh: "活力",
     localizedNameEn: "Vital",
     cost: 0,
     isRecipe: false,
@@ -6724,7 +6724,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1866,
     name: "item_enhancement_hulking",
-    localizedNameZh: "Hulking",
+    localizedNameZh: "巨硕",
     localizedNameEn: "Hulking",
     cost: 0,
     isRecipe: false,
@@ -6738,7 +6738,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1867,
     name: "item_enhancement_manic",
-    localizedNameZh: "Manic",
+    localizedNameZh: "狂躁",
     localizedNameEn: "Manic",
     cost: 0,
     isRecipe: false,
@@ -6752,7 +6752,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1868,
     name: "item_foragers_kit",
-    localizedNameZh: "Forager's Kit",
+    localizedNameZh: "采集者工具包",
     localizedNameEn: "Forager's Kit",
     cost: 0,
     isRecipe: false,
@@ -6766,7 +6766,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1869,
     name: "item_foragers_health",
-    localizedNameZh: "Vital Toadstool",
+    localizedNameZh: "活力毒菌",
     localizedNameEn: "Vital Toadstool",
     cost: 0,
     isRecipe: false,
@@ -6780,7 +6780,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1870,
     name: "item_foragers_stats",
-    localizedNameZh: "Ironwood Nut",
+    localizedNameZh: "铁木坚果",
     localizedNameEn: "Ironwood Nut",
     cost: 0,
     isRecipe: false,
@@ -6794,7 +6794,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1871,
     name: "item_foragers_mana",
-    localizedNameZh: "Tomo'kan Ringcap",
+    localizedNameZh: "托莫坎环盖",
     localizedNameEn: "Tomo'kan Ringcap",
     cost: 0,
     isRecipe: false,
@@ -6808,7 +6808,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1872,
     name: "item_chasm_stone",
-    localizedNameZh: "Chasm Stone",
+    localizedNameZh: "深渊石",
     localizedNameEn: "Chasm Stone",
     cost: 800,
     isRecipe: false,
@@ -6822,7 +6822,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1873,
     name: "item_partisans_brand",
-    localizedNameZh: "Partisan's Brand",
+    localizedNameZh: "游击者烙印",
     localizedNameEn: "Partisan's Brand",
     cost: 0,
     isRecipe: false,
@@ -6836,7 +6836,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1874,
     name: "item_enhancement_nimble",
-    localizedNameZh: "Nimble",
+    localizedNameZh: "灵活",
     localizedNameEn: "Nimble",
     cost: 0,
     isRecipe: false,
@@ -6850,7 +6850,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 1875,
     name: "item_tidehunter_fish",
-    localizedNameZh: "Leviathan's Fish",
+    localizedNameZh: "利维坦之鱼",
     localizedNameEn: "Leviathan's Fish",
     cost: 0,
     isRecipe: false,
@@ -6864,7 +6864,7 @@ export const MOCK_ITEMS: ItemData[] = [
   {
     id: 196,
     name: "item_diffusal_blade_2",
-    localizedNameZh: "Diffusal Blade",
+    localizedNameZh: "净魂之刃",
     localizedNameEn: "Diffusal Blade",
     cost: 3850,
     isRecipe: false,

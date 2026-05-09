@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 interface GuidesPageProps {
-  searchParams: Promise<{ q?: string; role?: string; difficulty?: string }>;
+  searchParams: Promise<{ q?: string; role?: string; difficulty?: string; hero?: string }>;
 }
 
 export default async function GuidesPage({ searchParams }: GuidesPageProps) {
@@ -24,8 +24,13 @@ export default async function GuidesPage({ searchParams }: GuidesPageProps) {
   const query = sp.q?.toLowerCase() ?? "";
   const roleFilter = sp.role ?? "";
   const difficultyFilter = sp.difficulty ?? "";
+  const heroId = sp.hero ? parseInt(sp.hero, 10) : null;
 
   let filtered = MOCK_GUIDES;
+
+  if (heroId != null && !isNaN(heroId)) {
+    filtered = filtered.filter((g) => g.heroId === heroId);
+  }
 
   if (query) {
     filtered = filtered.filter(
@@ -51,6 +56,7 @@ export default async function GuidesPage({ searchParams }: GuidesPageProps) {
         query={query}
         currentRole={roleFilter}
         currentDifficulty={difficultyFilter}
+        heroId={heroId}
       />
 
       {filtered.length === 0 ? (

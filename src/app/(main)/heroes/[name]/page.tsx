@@ -18,7 +18,7 @@ import {
   ATTRIBUTE_COLORS,
   ROLE_NAMES,
   type AttributeType,
-  type ItemBuildData,
+  type ItemBuildPath,
 } from "@/types/dota";
 import {
   getWinRateColor,
@@ -42,32 +42,15 @@ interface HeroPageProps {
   params: Promise<{ name: string }>;
 }
 
-const phaseLabels: Record<string, string> = {
-  starting: "出门装",
-  early: "前期",
-  mid: "中期核心",
-  late: "后期",
-};
-
 export default async function HeroPage({ params }: HeroPageProps) {
   const { name } = await params;
   const result = await getHeroByName(name, "api", "api");
   if (!result) notFound();
 
-  const { hero, meta, matchups, itemBuilds } = result;
+  const { hero, meta, matchups, buildPaths } = result;
   const abilities = generateMockAbilities(hero);
 
   const attr = hero.primaryAttribute as AttributeType;
-
-  // Group item builds by phase
-  const buildsByPhase = itemBuilds.reduce<
-    Record<string, ItemBuildData[]>
-  >((acc, build) => {
-    const phase = build.gamePhase;
-    if (!acc[phase]) acc[phase] = [];
-    acc[phase].push(build);
-    return acc;
-  }, {});
 
   const sortedMatchups = [...matchups].sort(
     (a, b) => b.advantage - a.advantage
@@ -179,107 +162,127 @@ export default async function HeroPage({ params }: HeroPageProps) {
             <StatCard label="梯队排名" value={`T${meta.tierRank ?? "-"}`} />
           </div>
 
-          {/* Quick Item Build Summary */}
-          <Card>
-            <CardHeader>
-              <h3 className="text-lg font-semibold text-dota-text">
-                热门出装路线
-              </h3>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {(["starting", "early", "mid", "late"] as const).map(
-                  (phase) => {
-                    const items = buildsByPhase[phase];
-                    if (!items || items.length === 0) return null;
-                    return (
-                      <div key={phase}>
-                        <p className="text-xs font-medium text-dota-muted mb-2 uppercase tracking-wider">
-                          {phaseLabels[phase]}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {items.slice(0, 4).map((item) => (
-                            <Link
-                              key={item.itemId}
-                              href={`/items/${item.itemId}`}
-                              className="flex items-center gap-2 rounded border border-dota-border bg-dota-bg px-2 py-1 text-sm hover:border-dota-accent transition-colors"
-                            >
-                              <SafeImage
-                                src={getItemImageUrl(item.itemIcon)}
-                                alt={item.itemNameZh}
-                                className="w-6 h-6 rounded"
-                              />
-                              <span className="text-dota-text">
-                                {item.itemNameZh}
-                              </span>
-                              <span className="text-xs text-dota-muted">
-                                {formatPercent(item.popularity)}
-                              </span>
-                            </Link>
-                          ))}
+          {/* Build Paths */}
+          <div>
+            <h3 className="text-lg font-semibold text-dota-text mb-4">
+              热门出装路线
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {buildPaths.map((path) => (
+                <Card key={path.id}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-semibold text-dota-text">
+                        {path.nameZh}
+                      </h4>
+                      <Badge variant="outline" className="text-xs">
+                        {path.playstyle}
+                      </Badge>
+                    </div>
+                    <p className="text-xs text-dota-muted">{path.description}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {path.phaseGroups.map((group) => (
+                        <div key={group.gamePhase}>
+                          <p className="text-xs font-medium text-dota-muted mb-1.5 uppercase tracking-wider">
+                            {group.label}
+                          </p>
+                          <div className="flex flex-wrap gap-1.5">
+                            {group.items.slice(0, 4).map((item) => (
+                              <Link
+                                key={item.itemId}
+                                href={`/items/${item.itemId}`}
+                                className="flex items-center gap-1.5 rounded border border-dota-border bg-dota-bg px-2 py-1 text-xs hover:border-dota-accent transition-colors"
+                              >
+                                <SafeImage
+                                  src={getItemImageUrl(item.itemIcon)}
+                                  alt={item.itemNameZh}
+                                  className="w-5 h-5 rounded"
+                                />
+                                <span className="text-dota-text">
+                                  {item.itemNameZh}
+                                </span>
+                                <span className="text-dota-muted">
+                                  {formatPercent(item.popularity)}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    );
-                  }
-                )}
-              </div>
-            </CardContent>
-          </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </TabsContent>
 
         {/* Items Tab */}
-        <TabsContent value="items" className="space-y-6">
-          {(["starting", "early", "mid", "late"] as const).map((phase) => {
-            const items = buildsByPhase[phase];
-            if (!items || items.length === 0) return null;
-            return (
-              <Card key={phase}>
-                <CardHeader>
-                  <h3 className="text-lg font-semibold text-dota-text">
-                    {phaseLabels[phase]}
-                  </h3>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {items.map((item) => (
-                      <div
-                        key={item.itemId}
-                        className="flex items-center justify-between rounded border border-dota-border bg-dota-bg p-3"
-                      >
-                        <div className="flex items-center gap-3">
-                          <SafeImage
-                            src={getItemImageUrl(item.itemIcon)}
-                            alt={item.itemNameZh}
-                            className="w-10 h-8 rounded object-cover"
-                          />
-                          <div>
-                            <p className="text-sm font-medium text-dota-text">
-                              {item.itemNameZh}
-                            </p>
-                            <p className="text-xs text-dota-muted">
-                              价格: {item.cost} 金币
-                              {item.avgTiming &&
-                                ` · 平均 ${item.avgTiming} 分钟`}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm text-dota-text">
-                            {formatPercent(item.popularity)}
-                          </p>
-                          <p
-                            className={`text-xs ${getWinRateColor(item.winRate)}`}
+        <TabsContent value="items" className="space-y-8">
+          {buildPaths.map((path) => (
+            <div key={path.id}>
+              <div className="flex items-center gap-3 mb-4">
+                <h3 className="text-lg font-semibold text-dota-text">
+                  {path.nameZh}
+                </h3>
+                <Badge variant="outline" className="text-xs">
+                  {path.playstyle}
+                </Badge>
+              </div>
+              <p className="text-sm text-dota-muted mb-4">{path.description}</p>
+              <div className="space-y-4">
+                {path.phaseGroups.map((group) => (
+                  <Card key={group.gamePhase}>
+                    <CardHeader>
+                      <h4 className="text-md font-semibold text-dota-text">
+                        {group.label}
+                      </h4>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {group.items.map((item) => (
+                          <div
+                            key={item.itemId}
+                            className="flex items-center justify-between rounded border border-dota-border bg-dota-bg p-3"
                           >
-                            胜率 {formatPercent(item.winRate)}
-                          </p>
-                        </div>
+                            <div className="flex items-center gap-3">
+                              <SafeImage
+                                src={getItemImageUrl(item.itemIcon)}
+                                alt={item.itemNameZh}
+                                className="w-10 h-8 rounded object-cover"
+                              />
+                              <div>
+                                <p className="text-sm font-medium text-dota-text">
+                                  {item.itemNameZh}
+                                </p>
+                                <p className="text-xs text-dota-muted">
+                                  价格: {item.cost} 金币
+                                  {item.avgTiming != null &&
+                                    ` · 平均 ${item.avgTiming} 分钟`}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <p className="text-sm text-dota-text">
+                                {formatPercent(item.popularity)}
+                              </p>
+                              <p
+                                className={`text-xs ${getWinRateColor(item.winRate)}`}
+                              >
+                                胜率 {formatPercent(item.winRate)}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </TabsContent>
 
         {/* Matchups Tab */}

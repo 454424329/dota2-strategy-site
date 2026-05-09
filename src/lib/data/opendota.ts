@@ -37,15 +37,20 @@ interface OpenDotaMatchup {
   wins: number;
 }
 
+// /proMatches uses flat fields (not nested objects)
 interface OpenDotaProMatch {
   match_id: number;
   start_time: number;
   duration: number;
-  radiant_team: { team_id: number; name: string; tag: string };
-  dire_team: { team_id: number; name: string; tag: string };
+  radiant_team_id?: number;
+  radiant_name?: string;
+  dire_team_id?: number;
+  dire_name?: string;
   radiant_score: number;
   dire_score: number;
-  league: { leagueid: number; name: string; tier: string };
+  leagueid?: number;
+  league_name?: string;
+  league_tier?: number;
   radiant_win: boolean;
 }
 

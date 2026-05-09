@@ -1,8 +1,9 @@
-import { HeroData, AbilityData, ItemBuildData, HeroMetaData, HeroMatchupData } from "@/types/dota";
+import { HeroData, AbilityData, ItemBuildData, HeroMetaData, HeroMatchupData, type ItemBuildPath, type ItemBuildPhaseGroup } from "@/types/dota";
 import { getHeroImageUrl, getItemImageUrl, getAbilityImageUrl } from "@/lib/utils";
 import { MOCK_HEROES } from "@/lib/data/heroes-mock";
 import { MOCK_ITEMS } from "@/lib/data/items-mock";
 import { MOCK_GUIDES } from "@/lib/data/guides-mock";
+import { getBuildsForRoles } from "@/lib/data/item-templates";
 
 export { MOCK_HEROES, MOCK_ITEMS, MOCK_GUIDES };
 
@@ -60,15 +61,70 @@ export function generateMockMatchups(heroId: number): HeroMatchupData[] {
     });
 }
 
-export function generateMockItemBuilds(heroId: number): ItemBuildData[] {
-  return [
-    { itemId: 108, itemName: "item_magic_wand", itemNameZh: "魔杖", itemIcon: makeImageUrl("magic_wand", "item"), cost: 450, gamePhase: "starting", popularity: 0.85, winRate: 0.52, avgTiming: 0 },
-    { itemId: 180, itemName: "item_power_treads", itemNameZh: "动力鞋", itemIcon: makeImageUrl("power_treads", "item"), cost: 1400, gamePhase: "early", popularity: 0.65, winRate: 0.51, avgTiming: 6 },
-    { itemId: 208, itemName: "item_battle_fury", itemNameZh: "狂战斧", itemIcon: makeImageUrl("battle_fury", "item"), cost: 4100, gamePhase: "mid", popularity: 0.55, winRate: 0.54, avgTiming: 14 },
-    { itemId: 112, itemName: "item_manta", itemNameZh: "幻影斧", itemIcon: makeImageUrl("manta", "item"), cost: 4600, gamePhase: "mid", popularity: 0.48, winRate: 0.56, avgTiming: 22 },
-    { itemId: 1, itemName: "item_blink", itemNameZh: "闪烁匕首", itemIcon: makeImageUrl("blink", "item"), cost: 2250, gamePhase: "mid", popularity: 0.30, winRate: 0.53, avgTiming: 18 },
-    { itemId: 51, itemName: "item_black_king_bar", itemNameZh: "黑皇杖", itemIcon: makeImageUrl("black_king_bar", "item"), cost: 4050, gamePhase: "late", popularity: 0.70, winRate: 0.55, avgTiming: 25 },
-  ];
+const phaseLabels: Record<string, string> = {
+  starting: "出门装",
+  early: "前期",
+  mid: "中期核心",
+  late: "后期",
+};
+
+function pseudoRand(seed: number, min: number, max: number): number {
+  const x = Math.sin(seed) * 10000;
+  return min + (x - Math.floor(x)) * (max - min);
+}
+
+export function generateMockItemBuilds(heroId: number, roles: string[]): ItemBuildPath[] {
+  const templates = getBuildsForRoles(roles);
+
+  return templates.map((template, tIdx) => {
+    const phaseOrder = ["starting", "early", "mid", "late"] as const;
+
+    const phaseGroups: ItemBuildPhaseGroup[] = phaseOrder
+      .filter((phase) => template.phases[phase]?.length > 0)
+      .map((phase) => {
+        const items: ItemBuildData[] = template.phases[phase]
+          .map((itemId) => {
+            const mockItem = MOCK_ITEMS.find((mi) => mi.id === itemId);
+            if (!mockItem) return null;
+
+            const pop = pseudoRand(heroId * 1000 + itemId + tIdx * 7, 0.28, 0.82);
+            const wr = pseudoRand(heroId * 1000 + itemId + tIdx * 13 + 5, 0.44, 0.58);
+
+            let avgTiming: number | undefined;
+            if (phase === "starting") avgTiming = 0;
+            else if (phase === "early") avgTiming = Math.round(pseudoRand(heroId + itemId, 3, 10));
+            else if (phase === "mid") avgTiming = Math.round(pseudoRand(heroId + itemId + tIdx, 12, 28));
+            else avgTiming = Math.round(pseudoRand(heroId + itemId + tIdx * 3, 28, 45));
+
+            return {
+              itemId: mockItem.id,
+              itemName: mockItem.name,
+              itemNameZh: mockItem.localizedNameZh,
+              itemIcon: mockItem.imageIcon,
+              cost: mockItem.cost,
+              gamePhase: phase,
+              popularity: Math.round(pop * 100) / 100,
+              winRate: Math.round(wr * 100) / 100,
+              avgTiming,
+            };
+          })
+          .filter(Boolean) as ItemBuildData[];
+
+        return {
+          gamePhase: phase,
+          label: phaseLabels[phase],
+          items,
+        };
+      });
+
+    return {
+      id: template.id,
+      nameZh: template.nameZh,
+      description: template.description,
+      playstyle: template.playstyle,
+      phaseGroups,
+    };
+  });
 }
 
 export function generateMockAbilities(hero: HeroData): AbilityData[] {

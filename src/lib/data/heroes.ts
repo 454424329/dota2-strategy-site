@@ -1,5 +1,5 @@
 import { cache } from "react";
-import type { HeroData, HeroMetaData, HeroMatchupData, ItemBuildData } from "@/types/dota";
+import type { HeroData, HeroMetaData, HeroMatchupData, ItemBuildPath } from "@/types/dota";
 import type { DataSource } from "./types";
 import {
   fetchHeroes,
@@ -95,7 +95,7 @@ export async function getHeroByName(
   hero: HeroData;
   meta: HeroMetaData;
   matchups: HeroMatchupData[];
-  itemBuilds: ItemBuildData[];
+  buildPaths: ItemBuildPath[];
 } | null> {
   const hero = MOCK_HEROES.find(
     (h) => h.name === heroName || h.name === `npc_dota_hero_${heroName}`,
@@ -125,7 +125,7 @@ export async function getHeroByName(
     matchups = generateMockMatchups(hero.id);
   }
 
-  const itemBuilds = generateMockItemBuilds(hero.id);
+  const buildPaths = generateMockItemBuilds(hero.id, hero.roles);
 
-  return { hero, meta, matchups, itemBuilds };
+  return { hero, meta, matchups, buildPaths };
 }

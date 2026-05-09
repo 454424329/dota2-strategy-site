@@ -173,9 +173,22 @@ for (const h of heroes) {
   const viewCount = Math.floor(2000 + Math.sin(h.id * 7) * 8000 + h.id * 73);
   const likeCount = Math.floor(viewCount * (0.02 + Math.sin(h.id * 13) * 0.03));
 
-  const laningItems = [108, 50, 28];
-  const coreItems = primaryRole === "Support" ? [53, 102] : [1, 51, 116];
-  const situationalItems = [600, 147, 46];
+  // Verified item IDs from items-mock.ts
+  const roleItems = {
+    Carry:        { laning: [11, 44, 44, 16],       core: [63, 36, 145],         situational: [139, 156, 208] },
+    Support:      { laning: [44, 218, 1123, 38],    core: [180, 36, 254],        situational: [231, 609, 108] },
+    Initiator:    { laning: [44, 44, 13, 16],       core: [50, 36, 1],           situational: [112, 114, 119] },
+    Nuker:        { laning: [44, 44, 15, 16],       core: [180, 77, 41],         situational: [235, 110, 259] },
+    Durable:      { laning: [11, 44, 44, 16],       core: [50, 125, 90],         situational: [114, 119, 112] },
+    Disabler:     { laning: [44, 44, 16, 38],       core: [180, 36, 1],          situational: [108, 110, 609] },
+    Escape:       { laning: [44, 44, 16, 38],       core: [50, 36, 252],         situational: [139, 160, 249] },
+    Pusher:       { laning: [44, 44, 16, 38],       core: [180, 178, 36],        situational: [235, 110, 600] },
+    Jungler:      { laning: [11, 44, 44, 16],       core: [63, 36, 145],         situational: [139, 156, 208] },
+  };
+  const items = roleItems[primaryRole] || roleItems["Carry"];
+  const laningItems = items.laning;
+  const coreItems = items.core;
+  const situationalItems = items.situational;
 
   lines.push(`  {`);
   lines.push(`    id: "g${guideCount + 4}",`);

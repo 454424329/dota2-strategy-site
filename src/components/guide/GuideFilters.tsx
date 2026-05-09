@@ -8,6 +8,7 @@ interface GuideFiltersProps {
   query: string;
   currentRole: string;
   currentDifficulty: string;
+  heroId?: number | null;
 }
 
 const roles: { value: string; label: string }[] = [
@@ -25,7 +26,7 @@ const difficulties: { value: string; label: string }[] = [
   { value: "advanced", label: "高手" },
 ];
 
-export function GuideFilters({ query, currentRole, currentDifficulty }: GuideFiltersProps) {
+export function GuideFilters({ query, currentRole, currentDifficulty, heroId }: GuideFiltersProps) {
   function buildUrl(params: Record<string, string | undefined>) {
     const p = new URLSearchParams();
     for (const [k, v] of Object.entries(params)) {
@@ -57,6 +58,7 @@ export function GuideFilters({ query, currentRole, currentDifficulty }: GuideFil
             q: query || undefined,
             role: r.value || undefined,
             difficulty: currentDifficulty || undefined,
+            hero: heroId ? String(heroId) : undefined,
           });
           return (
             <a key={r.value} href={href}>
@@ -80,6 +82,7 @@ export function GuideFilters({ query, currentRole, currentDifficulty }: GuideFil
             q: query || undefined,
             role: currentRole || undefined,
             difficulty: d.value || undefined,
+            hero: heroId ? String(heroId) : undefined,
           });
           return (
             <a key={d.value} href={href}>

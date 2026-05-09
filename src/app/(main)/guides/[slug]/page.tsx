@@ -6,8 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SafeImage } from "@/components/shared/SafeImage";
-import { MOCK_GUIDES } from "@/lib/mock-data";
-import { formatDate, getHeroImageUrl } from "@/lib/utils";
+import { MOCK_GUIDES, MOCK_ITEMS } from "@/lib/mock-data";
+import { formatDate, getHeroImageUrl, getItemImageUrl, formatPercent } from "@/lib/utils";
 import { ArrowLeft, ThumbsUp, Eye, Clock } from "lucide-react";
 
 interface GuidePageProps {
@@ -93,6 +93,11 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
         <Separator className="my-8" />
 
+        {/* Items */}
+        <GuideItemsSection guide={guide} />
+
+        <Separator className="my-8" />
+
         {/* Author Card */}
         <Card>
           <CardContent className="py-4 flex items-center gap-4">
@@ -115,5 +120,54 @@ export default async function GuidePage({ params }: GuidePageProps) {
         </Card>
       </article>
     </Container>
+  );
+}
+
+function GuideItemsSection({ guide }: { guide: (typeof MOCK_GUIDES)[number] }) {
+  const sections = [
+    { label: "对线装备", ids: guide.laningItems },
+    { label: "核心装备", ids: guide.coreItems },
+    { label: "可选装备", ids: guide.situationalItems },
+  ];
+
+  return (
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold text-dota-text">推荐装备</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {sections.map((section) => (
+          <Card key={section.label}>
+            <CardHeader>
+              <h4 className="text-sm font-semibold text-dota-text">
+                {section.label}
+              </h4>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2">
+                {section.ids.map((itemId) => {
+                  const item = MOCK_ITEMS.find((m) => m.id === itemId);
+                  if (!item) return null;
+                  return (
+                    <div
+                      key={itemId}
+                      className="flex items-center gap-1.5 rounded border border-dota-border bg-dota-bg px-2 py-1 text-xs"
+                      title={`${item.localizedNameZh} (${item.cost} 金币)`}
+                    >
+                      <SafeImage
+                        src={getItemImageUrl(item.imageIcon)}
+                        alt={item.localizedNameZh}
+                        className="w-5 h-5 rounded"
+                      />
+                      <span className="text-dota-text">
+                        {item.localizedNameZh}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 }
