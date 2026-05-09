@@ -23,6 +23,10 @@ model Hero {
   heroMeta       HeroMeta[]
   guides         Guide[]
   news           News[]
+  abilities      Ability[]
+
+  heroMatchupsA HeroMatchup[] @relation("HeroA")
+  heroMatchupsB HeroMatchup[] @relation("HeroB")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -85,8 +89,7 @@ model MetaSnapshot {
 
   patch         GamePatch       @relation(fields: [patchId], references: [id])
   heroMeta      HeroMeta[]
-  heroMatchupsA HeroMatchup[]   @relation("HeroA")
-  heroMatchupsB HeroMatchup[]   @relation("HeroB")
+  heroMatchups  HeroMatchup[]
 
   createdAt DateTime @default(now())
 }
@@ -145,6 +148,8 @@ model User {
   comments   Comment[]
   favorites  UserFavorite[]
   accounts   Account[]
+  discussions Discussion[]
+  posts      Post[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -271,4 +276,62 @@ model NewsSource {
   fetchIntervalMinutes Int @default(30)
 
   createdAt DateTime @default(now())
+}
+
+// ── Community / Forum models ──
+
+model ForumCategory {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name         String
+  nameZh       String
+  description  String?
+  descriptionZh String?
+  sortOrder    Int      @default(0)
+  color        String   @default("dota-gold")
+
+  discussions  Discussion[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Discussion {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   @db.Text
+  slug        String   @unique
+  categoryId  String
+  authorId    String
+  viewCount   Int      @default(0)
+  replyCount  Int      @default(0)
+  isPinned    Boolean  @default(false)
+  isLocked    Boolean  @default(false)
+
+  category  ForumCategory @relation(fields: [categoryId], references: [id])
+  author    User          @relation(fields: [authorId], references: [id])
+  posts     Post[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId])
+  @@index([createdAt])
+  @@index([viewCount])
+}
+
+model Post {
+  id           String   @id @default(cuid())
+  content      String   @db.Text
+  discussionId String
+  authorId     String
+
+  discussion Discussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  author     User       @relation(fields: [authorId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([discussionId])
+  @@index([createdAt])
 }

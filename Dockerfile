@@ -25,10 +25,19 @@ RUN adduser --system --uid 1001 nextjs
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/prisma.config.ts ./
+COPY --from=builder --chown=nextjs:nodejs /app/scripts/seed-community.mjs ./scripts/seed-community.mjs
+COPY --from=builder --chown=nextjs:nodejs /app/scripts/entrypoint.sh ./
+
+# Install Prisma CLI for migrations
+RUN npm install prisma@7 --save-prod 2>/dev/null || true
+
+RUN chmod +x entrypoint.sh
 
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "server.js"]
+ENTRYPOINT ["./entrypoint.sh"]
