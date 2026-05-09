@@ -2,8 +2,9 @@ import { HeroData, AbilityData, ItemBuildData, HeroMetaData, HeroMatchupData } f
 import { getHeroImageUrl, getItemImageUrl, getAbilityImageUrl } from "@/lib/utils";
 import { MOCK_HEROES } from "@/lib/data/heroes-mock";
 import { MOCK_ITEMS } from "@/lib/data/items-mock";
+import { MOCK_GUIDES } from "@/lib/data/guides-mock";
 
-export { MOCK_HEROES, MOCK_ITEMS };
+export { MOCK_HEROES, MOCK_ITEMS, MOCK_GUIDES };
 
 function makeImageUrl(baseName: string, type: "hero" | "item" | "ability"): string {
   switch (type) {
@@ -111,78 +112,6 @@ export function generateMockAbilities(hero: HeroData): AbilityData[] {
     imageIcon: makeImageUrl(a.name, "ability"),
   }));
 }
-
-export const MOCK_GUIDES = [
-  {
-    id: "g1",
-    heroId: 1,
-    title: "7.41 敌法师上分指南 — 从入门到超凡",
-    slug: "anti-mage-carry-7-37",
-    summary: "详细解析当前版本敌法师的装备路线、技能加点和对线思路，帮助你在天梯中快速上分。",
-    content: "# 敌法师指南\n\n## 英雄定位\n敌法师是一个近战敏捷核心，拥有极强的法力燃烧能力和优秀的机动性...",
-    role: "Carry",
-    difficulty: "intermediate",
-    laningItems: [108, 2],
-    coreItems: [180, 208, 112],
-    situationalItems: [1, 51],
-    skillBuild: null,
-    talentChoices: null,
-    viewCount: 12450,
-    likeCount: 328,
-    status: "published",
-    versionTag: "7.41",
-    author: { id: "u1", name: "DOTA攻略大师", image: null },
-    hero: { id: 1, name: "npc_dota_hero_antimage", localizedNameZh: "敌法师", imageIcon: "antimage" },
-    createdAt: "2024-08-15T08:00:00Z",
-    updatedAt: "2024-08-20T12:00:00Z",
-  },
-  {
-    id: "g2",
-    heroId: 74,
-    title: "祈求者卡尔全面攻略 — 连招、天赋与装备选择",
-    slug: "invoker-guide-7-37",
-    summary: "从冰雷卡到火卡，深度分析卡尔的多种打法流派，包含详细的连招教学。",
-    content: "# 卡尔攻略\n\n## 英雄定位\n祈求者是DOTA2中最独特的英雄之一，拥有10个技能...",
-    role: "Mid",
-    difficulty: "advanced",
-    laningItems: [108],
-    coreItems: [1, 51],
-    situationalItems: [147],
-    skillBuild: null,
-    talentChoices: null,
-    viewCount: 8920,
-    likeCount: 215,
-    status: "published",
-    versionTag: "7.41",
-    author: { id: "u2", name: "卡尔绝活哥", image: null },
-    hero: { id: 74, name: "npc_dota_hero_invoker", localizedNameZh: "祈求者", imageIcon: "invoker" },
-    createdAt: "2024-08-10T14:00:00Z",
-    updatedAt: "2024-08-18T09:00:00Z",
-  },
-  {
-    id: "g3",
-    heroId: 8,
-    title: "主宰剑圣新手攻略 — 最简单的Carry入门",
-    slug: "juggernaut-beginner-guide",
-    summary: "适合新手的剑圣攻略，从基础操作到团战思路，快速上手这个强力核心。",
-    content: "# 剑圣攻略\n\n## 英雄定位\n剑圣是一个非常适合新手的Carry英雄...",
-    role: "Carry",
-    difficulty: "beginner",
-    laningItems: [108, 2],
-    coreItems: [116, 112],
-    situationalItems: [1, 51],
-    skillBuild: null,
-    talentChoices: null,
-    viewCount: 15600,
-    likeCount: 412,
-    status: "published",
-    versionTag: "7.41",
-    author: { id: "u3", name: "新手导师", image: null },
-    hero: { id: 8, name: "npc_dota_hero_juggernaut", localizedNameZh: "主宰", imageIcon: "juggernaut" },
-    createdAt: "2024-08-05T10:00:00Z",
-    updatedAt: "2024-08-22T16:00:00Z",
-  },
-];
 
 export const MOCK_NEWS = [
   {
