@@ -32,8 +32,14 @@ COPY --from=builder --chown=nextjs:nodejs /app/prisma.config.ts ./
 COPY --from=builder --chown=nextjs:nodejs /app/scripts/seed-community.mjs ./scripts/seed-community.mjs
 COPY --from=builder --chown=nextjs:nodejs /app/scripts/entrypoint.sh ./
 
-# Install Prisma CLI for migrations
-RUN npm install prisma@7 --save-prod 2>/dev/null || true
+# Copy prisma and auth packages from deps (already installed)
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/prisma ./node_modules/prisma
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/@auth ./node_modules/@auth
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/jose ./node_modules/jose
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/preact ./node_modules/preact
+COPY --from=deps --chown=nextjs:nodejs /app/node_modules/oauth4webapi ./node_modules/oauth4webapi
 
 RUN chmod +x entrypoint.sh
 
