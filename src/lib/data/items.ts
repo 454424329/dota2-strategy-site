@@ -3,6 +3,18 @@ import type { ItemData } from "@/types/dota";
 import type { DataSource } from "./types";
 import { fetchItems } from "./opendota";
 import { MOCK_ITEMS } from "./items-mock";
+import { ITEM_RECIPES } from "./item-recipes";
+import { ITEM_DESCRIPTIONS } from "./item-descriptions";
+
+function enrichItem(item: ItemData): ItemData {
+  const desc = ITEM_DESCRIPTIONS[item.id];
+  const recipe = ITEM_RECIPES[item.id];
+  return {
+    ...item,
+    descriptionZh: desc || item.descriptionZh,
+    components: recipe || item.components,
+  };
+}
 
 interface OpenDotaItemConst {
   id: number;
@@ -23,11 +35,11 @@ interface OpenDotaItemConst {
 
 export const getAllItems = cache(async (source: DataSource = "api") => {
   if (source === "mock") {
-    return MOCK_ITEMS;
+    return MOCK_ITEMS.map(enrichItem);
   }
 
   const data = await fetchItems();
-  if (!data) return MOCK_ITEMS;
+  if (!data) return MOCK_ITEMS.map(enrichItem);
 
   // Map OpenDota constants to our ItemData format
   const items: ItemData[] = [];
@@ -64,7 +76,7 @@ export const getAllItems = cache(async (source: DataSource = "api") => {
     }
   }
 
-  return items.length > 0 ? items : MOCK_ITEMS;
+  return items.length > 0 ? items.map(enrichItem) : MOCK_ITEMS.map(enrichItem);
 });
 
 export async function getItemById(id: number, source: DataSource = "api") {
