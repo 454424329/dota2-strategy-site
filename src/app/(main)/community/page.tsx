@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getCategories } from "@/lib/data/community";
 import { MessageCircle, Users, Lightbulb, Trophy, HelpCircle, Coffee } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "社区讨论",
   description: "DOTA2玩家社区 — 讨论英雄、战术、赛事，分享游戏心得",

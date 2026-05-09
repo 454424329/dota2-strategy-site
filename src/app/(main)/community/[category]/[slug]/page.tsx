@@ -11,6 +11,8 @@ import { getDiscussionBySlug, getPosts, incrementDiscussionView, getCategoryBySl
 import { formatTimeAgo } from "@/lib/utils";
 import { ArrowLeft, Lock } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 interface DiscussionPageProps {
   params: Promise<{ category: string; slug: string }>;
 }
