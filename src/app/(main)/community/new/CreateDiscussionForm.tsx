@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import type { ForumCategory } from "@/generated/prisma";
+import type { ForumCategory } from "@/generated/prisma/client";
 
 interface Props {
   categories: ForumCategory[];
