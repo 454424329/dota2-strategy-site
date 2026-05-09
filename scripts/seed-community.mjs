@@ -1,23 +1,15 @@
-// Seed forum categories and run migrations on deployment
-import { execSync } from "child_process";
-import { PrismaClient } from "@prisma/client";
+// Seed forum categories on deployment
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const { PrismaClient } = require("@prisma/client");
+const { PrismaPg } = require("@prisma/adapter-pg");
 
 const DATABASE_URL = process.env.DATABASE_URL || "postgresql://dota2:dota2_community_2026@localhost:5432/dota2";
 
-const prisma = new PrismaClient({ datasources: { db: { url: DATABASE_URL } } });
+const adapter = new PrismaPg({ connectionString: DATABASE_URL });
+const prisma = new PrismaClient({ adapter });
 
 async function seed() {
-  console.log("Running Prisma migrations...");
-  try {
-    execSync("npx prisma migrate deploy", {
-      env: { ...process.env, DATABASE_URL },
-      stdio: "inherit",
-      cwd: "/app",
-    });
-  } catch (err) {
-    console.error("Migration error:", err.message);
-  }
-
   console.log("Seeding forum categories...");
   const defaults = [
     { slug: "general", name: "General", nameZh: "综合讨论", description: "General Dota 2 discussion", descriptionZh: "DOTA2综合话题讨论区", sortOrder: 0, color: "text-dota-gold" },
