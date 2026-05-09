@@ -79,60 +79,86 @@ function getHeroZh(heroId) {
   return { name, zh };
 }
 
-// ── Teams ──
+// ── Teams (from real API data, or fallback) ──
 
-const realTeams = [
-  { name: "Team Spirit", tag: "TSpirit", rating: 1450, logoId: 7266794 },
-  { name: "Xtreme Gaming", tag: "XG", rating: 1420, logoId: 8601953 },
-  { name: "Team Liquid", tag: "Liquid", rating: 1400, logoId: 2163 },
-  { name: "Gaimin Gladiators", tag: "GG", rating: 1385, logoId: 8558998 },
-  { name: "BetBoom Team", tag: "BB", rating: 1370, logoId: 8514649 },
-  { name: "Team Falcons", tag: "Falcons", rating: 1360, logoId: 8713751 },
-  { name: "Tundra Esports", tag: "Tundra", rating: 1345, logoId: 8296035 },
-  { name: "Aurora Gaming", tag: "Aurora", rating: 1330, logoId: 8538156 },
-  { name: "PARIVISION", tag: "PARI", rating: 1315, logoId: 8634356 },
-  { name: "Nigma Galaxy", tag: "NGX", rating: 1300, logoId: 6209804 },
-  { name: "OG", tag: "OG", rating: 1285, logoId: 2581813 },
-  { name: "Natus Vincere", tag: "NaVi", rating: 1270, logoId: 36 },
-  { name: "Virtus.pro", tag: "VP", rating: 1260, logoId: 1883503 },
-  { name: "Azure Ray", tag: "AR", rating: 1250, logoId: 8601953 },
-  { name: "LGD Gaming", tag: "LGD", rating: 1240, logoId: 15 },
-  { name: "Invictus Gaming", tag: "iG", rating: 1225, logoId: 5 },
-  { name: "Yellow Submarine", tag: "YS", rating: 1210, logoId: 8721300 },
-  { name: "PSG Quest", tag: "Quest", rating: 1195, logoId: 8477121 },
-  { name: "Entity", tag: "Entity", rating: 1180, logoId: 6221156 },
-  { name: "MOUZ", tag: "MOUZ", rating: 1165, logoId: 8672176 },
-  { name: "Team Secret", tag: "Secret", rating: 1150, logoId: 6209804 },
-  { name: "Alliance", tag: "Alliance", rating: 1135, logoId: 111474 },
-  { name: "BOOM Esports", tag: "BOOM", rating: 1120, logoId: 6163296 },
-  { name: "Talon Esports", tag: "Talon", rating: 1105, logoId: 7115111 },
-  { name: "Shopify Rebellion", tag: "SR", rating: 1090, logoId: 6819394 },
-  { name: "nouns", tag: "nouns", rating: 1080, logoId: 8191247 },
-  { name: "Evil Geniuses", tag: "EG", rating: 1070, logoId: 39 },
-  { name: "beastcoast", tag: "bc", rating: 1060, logoId: 6209163 },
-  { name: "HEROIC", tag: "HEROIC", rating: 1050, logoId: 8675170 },
-  { name: "BB Team", tag: "BBT", rating: 1040, logoId: 8514649 },
-  { name: "One Move", tag: "OM", rating: 1025, logoId: 8395127 },
-  { name: "Hydra", tag: "Hydra", rating: 1010, logoId: 8223445 },
-  { name: "Nemiga Gaming", tag: "Nemiga", rating: 995, logoId: 6921472 },
-  { name: "paiN Gaming", tag: "paiN", rating: 980, logoId: 333 },
-  { name: "Infinity", tag: "INF", rating: 965, logoId: 8477121 },
-  { name: "Thunder Awaken", tag: "TA", rating: 950, logoId: 6209163 },
-  { name: "Execration", tag: "XctN", rating: 935, logoId: 498943 },
-  { name: "Geek Fam", tag: "GF", rating: 920, logoId: 6209804 },
-  { name: "Fnatic", tag: "Fnatic", rating: 905, logoId: 350190 },
-  { name: "BLEED Esports", tag: "BLEED", rating: 890, logoId: 8386316 },
-  { name: "SMG Team", tag: "SMG", rating: 875, logoId: 8420596 },
-  { name: "Polaris Esports", tag: "Polaris", rating: 860, logoId: 8454638 },
-  { name: "Neon Esports", tag: "Neon", rating: 845, logoId: 8194636 },
-  { name: "Army Geniuses", tag: "AG", rating: 830, logoId: 8194636 },
-  { name: "Lilgun", tag: "Lilgun", rating: 815, logoId: 8477121 },
-  { name: "Yangon Galacticos", tag: "YG", rating: 800, logoId: 8420596 },
-  { name: "MAG.Nirvana", tag: "MAG", rating: 785, logoId: 15 },
-  { name: "Dandelions", tag: "DAN", rating: 770, logoId: 8601953 },
-  { name: "Klim Sani4", tag: "KS", rating: 755, logoId: 8223445 },
-  { name: "Winter Bear", tag: "WB", rating: 740, logoId: 8634356 },
-];
+function loadTeams() {
+  try {
+    const raw = readFileSync(join(__dirname, "teams_api.json"), "utf-8");
+    const data = JSON.parse(raw);
+    if (Array.isArray(data) && data.length > 0) {
+      // Take top 50 teams by rating, with a recent match
+      return data
+        .filter((t) => t.rating > 800 && t.wins + t.losses > 5)
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 50)
+        .map((t) => ({
+          name: t.name,
+          tag: t.tag || t.name,
+          rating: Math.round(t.rating),
+          logoUrl: t.logo_url || "",
+          wins: t.wins,
+          losses: t.losses,
+        }));
+    }
+  } catch (err) {
+    console.warn("Could not load teams_api.json, using fallback data:", err.message);
+  }
+  // Fallback
+  return [
+    { name: "BetBoom Team", tag: "BetBoom", rating: 1584, logoUrl: "", wins: 641, losses: 506 },
+    { name: "Team Liquid", tag: "Liquid", rating: 1482, logoUrl: "", wins: 1776, losses: 1216 },
+    { name: "Team Falcons", tag: "FLCN", rating: 1476, logoUrl: "", wins: 540, losses: 283 },
+    { name: "PARIVISION", tag: "PV", rating: 1499, logoUrl: "", wins: 294, losses: 161 },
+    { name: "Team Spirit", tag: "TSpirit", rating: 1450, logoUrl: "", wins: 1200, losses: 800 },
+    { name: "Xtreme Gaming", tag: "XG", rating: 1420, logoUrl: "", wins: 450, losses: 300 },
+    { name: "Gaimin Gladiators", tag: "GG", rating: 1385, logoUrl: "", wins: 600, losses: 400 },
+    { name: "Tundra Esports", tag: "Tundra", rating: 1345, logoUrl: "", wins: 500, losses: 350 },
+    { name: "Aurora Gaming", tag: "Aurora", rating: 1330, logoUrl: "", wins: 328, losses: 242 },
+    { name: "Nigma Galaxy", tag: "NGX", rating: 1300, logoUrl: "", wins: 400, losses: 380 },
+    { name: "OG", tag: "OG", rating: 1285, logoUrl: "", wins: 900, losses: 700 },
+    { name: "Natus Vincere", tag: "NaVi", rating: 1270, logoUrl: "", wins: 1100, losses: 900 },
+    { name: "Virtus.pro", tag: "VP", rating: 1260, logoUrl: "", wins: 1000, losses: 850 },
+    { name: "Azure Ray", tag: "AR", rating: 1250, logoUrl: "", wins: 200, losses: 150 },
+    { name: "LGD Gaming", tag: "LGD", rating: 1240, logoUrl: "", wins: 800, losses: 600 },
+    { name: "Invictus Gaming", tag: "iG", rating: 1225, logoUrl: "", wins: 700, losses: 550 },
+    { name: "Yellow Submarine", tag: "YS", rating: 1210, logoUrl: "", wins: 150, losses: 120 },
+    { name: "PSG Quest", tag: "Quest", rating: 1195, logoUrl: "", wins: 300, losses: 280 },
+    { name: "Entity", tag: "Entity", rating: 1180, logoUrl: "", wins: 350, losses: 320 },
+    { name: "MOUZ", tag: "MOUZ", rating: 1165, logoUrl: "", wins: 250, losses: 230 },
+    { name: "Team Secret", tag: "Secret", rating: 1150, logoUrl: "", wins: 800, losses: 750 },
+    { name: "Alliance", tag: "Alliance", rating: 1135, logoUrl: "", wins: 700, losses: 650 },
+    { name: "BOOM Esports", tag: "BOOM", rating: 1120, logoUrl: "", wins: 200, losses: 180 },
+    { name: "Talon Esports", tag: "Talon", rating: 1105, logoUrl: "", wins: 300, losses: 250 },
+    { name: "Shopify Rebellion", tag: "SR", rating: 1090, logoUrl: "", wins: 400, losses: 380 },
+    { name: "nouns", tag: "nouns", rating: 1080, logoUrl: "", wins: 150, losses: 140 },
+    { name: "Evil Geniuses", tag: "EG", rating: 1070, logoUrl: "", wins: 900, losses: 800 },
+    { name: "beastcoast", tag: "bc", rating: 1060, logoUrl: "", wins: 250, losses: 230 },
+    { name: "HEROIC", tag: "HEROIC", rating: 1050, logoUrl: "", wins: 200, losses: 190 },
+    { name: "One Move", tag: "OM", rating: 1025, logoUrl: "", wins: 100, losses: 95 },
+    { name: "Hydra", tag: "Hydra", rating: 1010, logoUrl: "", wins: 80, losses: 75 },
+    { name: "Nemiga Gaming", tag: "Nemiga", rating: 995, logoUrl: "", wins: 120, losses: 110 },
+    { name: "paiN Gaming", tag: "paiN", rating: 980, logoUrl: "", wins: 150, losses: 140 },
+    { name: "Infinity", tag: "INF", rating: 965, logoUrl: "", wins: 90, losses: 85 },
+    { name: "Thunder Awaken", tag: "TA", rating: 950, logoUrl: "", wins: 200, losses: 190 },
+    { name: "Execration", tag: "XctN", rating: 935, logoUrl: "", wins: 130, losses: 125 },
+    { name: "Geek Fam", tag: "GF", rating: 920, logoUrl: "", wins: 110, losses: 105 },
+    { name: "Fnatic", tag: "Fnatic", rating: 905, logoUrl: "", wins: 500, losses: 480 },
+    { name: "BLEED Esports", tag: "BLEED", rating: 890, logoUrl: "", wins: 80, losses: 78 },
+    { name: "SMG Team", tag: "SMG", rating: 875, logoUrl: "", wins: 70, losses: 68 },
+    { name: "Polaris Esports", tag: "Polaris", rating: 860, logoUrl: "", wins: 60, losses: 58 },
+    { name: "Neon Esports", tag: "Neon", rating: 845, logoUrl: "", wins: 55, losses: 53 },
+    { name: "Army Geniuses", tag: "AG", rating: 830, logoUrl: "", wins: 50, losses: 48 },
+    { name: "Lilgun", tag: "Lilgun", rating: 815, logoUrl: "", wins: 45, losses: 44 },
+    { name: "Yangon Galacticos", tag: "YG", rating: 800, logoUrl: "", wins: 40, losses: 40 },
+    { name: "MAG.Nirvana", tag: "MAG", rating: 785, logoUrl: "", wins: 35, losses: 34 },
+    { name: "Dandelions", tag: "DAN", rating: 770, logoUrl: "", wins: 30, losses: 30 },
+    { name: "Klim Sani4", tag: "KS", rating: 755, logoUrl: "", wins: 28, losses: 28 },
+    { name: "Winter Bear", tag: "WB", rating: 740, logoUrl: "", wins: 25, losses: 26 },
+    { name: "Chimera", tag: "CHM", rating: 725, logoUrl: "", wins: 20, losses: 22 },
+  ];
+}
+
+const realTeams = loadTeams();
 
 // ── Leagues ──
 
@@ -308,10 +334,10 @@ const teamsArr = realTeams.map((t, i) => ({
   teamId: 1000 + i,
   name: t.name,
   tag: t.tag,
-  logoUrl: "",
-  rating: t.rating + Math.floor(Math.sin(i * 13) * 30),
-  wins: Math.floor(200 + Math.sin(i * 7) * 100),
-  losses: Math.floor(100 + Math.cos(i * 11) * 80),
+  logoUrl: t.logoUrl || "",
+  rating: t.rating,
+  wins: t.wins,
+  losses: t.losses,
   winRate: 0,
 }));
 teamsArr.forEach((t) => { t.winRate = t.wins / (t.wins + t.losses); });
@@ -419,7 +445,7 @@ for (const t of teamsArr) {
   lines.push(`    teamId: ${t.teamId},`);
   lines.push(`    name: "${esc(t.name)}",`);
   lines.push(`    tag: "${esc(t.tag)}",`);
-  lines.push(`    logoUrl: "",`);
+  lines.push(`    logoUrl: "${esc(t.logoUrl)}",`);
   lines.push(`    rating: ${t.rating},`);
   lines.push(`    wins: ${t.wins},`);
   lines.push(`    losses: ${t.losses},`);
