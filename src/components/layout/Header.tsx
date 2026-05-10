@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/news", label: "新闻" },
   { href: "/esports", label: "赛事" },
   { href: "/community", label: "社区" },
+  { href: "/sponsor", label: "赞助" },
   { href: "/meta", label: "Meta" },
 ];
 

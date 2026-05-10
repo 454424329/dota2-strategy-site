@@ -54,6 +54,22 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/community"
+                    className="text-sm text-dota-muted hover:text-dota-text transition-colors"
+                  >
+                    社区
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/sponsor"
+                    className="text-sm text-dota-muted hover:text-dota-text transition-colors"
+                  >
+                    赞助我们
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/meta"
                     className="text-sm text-dota-muted hover:text-dota-text transition-colors"
                   >

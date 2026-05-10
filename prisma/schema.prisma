@@ -143,6 +143,7 @@ model User {
   role          String    @default("user")
   steamId       String?   @unique
   bio           String?
+  supporterTier String?
 
   guides     Guide[]
   comments   Comment[]
@@ -150,6 +151,7 @@ model User {
   accounts   Account[]
   discussions Discussion[]
   posts      Post[]
+  sponsors   Sponsor[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -333,5 +335,24 @@ model Post {
   updatedAt DateTime @updatedAt
 
   @@index([discussionId])
+  @@index([createdAt])
+}
+
+// ── Sponsor / Donation model ──
+
+model Sponsor {
+  id          String   @id @default(cuid())
+  userId      String?
+  userName    String
+  amount      Float
+  message     String?
+  confirmed   Boolean  @default(false)
+  confirmedAt DateTime?
+
+  user User? @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@index([confirmed])
   @@index([createdAt])
 }

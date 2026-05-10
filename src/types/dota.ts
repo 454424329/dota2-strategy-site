@@ -281,6 +281,30 @@ export const LEAGUE_TIERS: Record<string, string> = {
   major: "甲级",
 };
 
+// ── Sponsor types ──
+
+export interface SponsorData {
+  id: string;
+  userName: string;
+  amount: number;
+  message: string | null;
+  confirmed: boolean;
+  createdAt: string;
+}
+
+export interface SponsorFormData {
+  userName: string;
+  amount: number;
+  message: string;
+}
+
+export const SPONSOR_TIERS = [
+  { amount: 6, label: "小赞", emoji: "👍" },
+  { amount: 18, label: "支持", emoji: "❤️" },
+  { amount: 30, label: "鼓励", emoji: "🔥" },
+  { amount: 66, label: "大赞", emoji: "🌟" },
+] as const;
+
 export const RANK_BRACKETS = [
   { value: "all", label: "全分段" },
   { value: "herald", label: "先锋" },
