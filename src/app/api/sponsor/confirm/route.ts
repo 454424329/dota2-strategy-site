@@ -4,8 +4,9 @@ import { confirmSponsor } from "@/lib/data/sponsor";
 
 export async function PUT(req: NextRequest) {
   const session = await auth();
-  if (!session?.user?.id) {
-    return NextResponse.json({ error: "请先登录" }, { status: 401 });
+  const role = (session?.user as { role?: string } | undefined)?.role;
+  if (!session?.user?.id || role !== "admin") {
+    return NextResponse.json({ error: "需要管理员权限" }, { status: 403 });
   }
 
   const body = await req.json();
@@ -17,4 +18,16 @@ export async function PUT(req: NextRequest) {
 
   await confirmSponsor(id);
   return NextResponse.json({ success: true });
+}
+
+export async function GET(req: NextRequest) {
+  const session = await auth();
+  const role = (session?.user as { role?: string } | undefined)?.role;
+  if (!session?.user?.id || role !== "admin") {
+    return NextResponse.json({ error: "需要管理员权限" }, { status: 403 });
+  }
+
+  const { getPendingSponsors } = await import("@/lib/data/sponsor");
+  const pending = await getPendingSponsors();
+  return NextResponse.json({ pending });
 }

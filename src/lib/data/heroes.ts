@@ -9,6 +9,7 @@ import {
   type OpenDotaMatchup,
 } from "./opendota";
 import { MOCK_HEROES } from "./heroes-mock";
+import { cacheDelete } from "./cache";
 import {
   generateMockMeta,
   generateMockMatchups,
@@ -128,4 +129,16 @@ export async function getHeroByName(
   const buildPaths = generateMockItemBuilds(hero.id, hero.roles);
 
   return { hero, meta, matchups, buildPaths };
+}
+
+/** Force-refresh hero stats cache — used by periodic refresh cron */
+export async function refreshHeroStatsCache(): Promise<boolean> {
+  cacheDelete("opendota:/heroStats");
+  const stats = await fetchHeroStats();
+  if (stats && stats.length > 0) {
+    console.log(`[Cache] Hero stats refreshed: ${stats.length} heroes`);
+    return true;
+  }
+  console.warn("[Cache] Hero stats refresh failed, cache not updated");
+  return false;
 }

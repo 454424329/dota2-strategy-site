@@ -7,6 +7,13 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { SPONSOR_TIERS } from "@/types/dota";
 import type { SponsorRow } from "@/lib/data/sponsor";
 
@@ -23,9 +30,10 @@ export function SponsorClient({ sponsors, stats, alipayQr, wechatQr }: Props) {
   const [customAmount, setCustomAmount] = useState("");
   const [userName, setUserName] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [pending, startTransition] = useTransition();
+  const [qrOpen, setQrOpen] = useState(false);
+  const [paidAmount, setPaidAmount] = useState(0);
 
   const usingCustom = customAmount !== "";
   const displayAmount = usingCustom ? Number(customAmount) || 0 : amount;
@@ -59,43 +67,16 @@ export function SponsorClient({ sponsors, stats, alipayQr, wechatQr }: Props) {
           setError(data.error || "提交失败");
           return;
         }
-        setSubmitted(true);
+        setPaidAmount(displayAmount);
+        setQrOpen(true);
+        setAmount(18);
+        setCustomAmount("");
+        setUserName("");
+        setMessage("");
       } catch {
         setError("网络错误，请重试");
       }
     });
-  }
-
-  if (submitted) {
-    return (
-      <Container className="py-12">
-        <Card className="max-w-md mx-auto text-center">
-          <CardContent className="py-12">
-            <div className="text-4xl mb-4">🎉</div>
-            <h2 className="text-xl font-bold text-dota-text mb-2">感谢你的赞助！</h2>
-            <p className="text-dota-muted mb-4">
-              请使用支付宝/微信扫码支付 <span className="text-dota-gold font-semibold">¥{displayAmount}</span>
-            </p>
-            <p className="text-sm text-dota-muted">
-              支付完成后，管理员确认后会展示在赞助墙上
-            </p>
-            <Button
-              variant="outline"
-              className="mt-6"
-              onClick={() => {
-                setSubmitted(false);
-                setAmount(18);
-                setCustomAmount("");
-                setUserName("");
-                setMessage("");
-              }}
-            >
-              返回
-            </Button>
-          </CardContent>
-        </Card>
-      </Container>
-    );
   }
 
   return (
@@ -143,51 +124,7 @@ export function SponsorClient({ sponsors, stats, alipayQr, wechatQr }: Props) {
       </div>
 
       {tab === "sponsor" ? (
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Left: QR codes */}
-          <Card>
-            <CardHeader>
-              <h2 className="text-sm font-semibold text-dota-text">扫码支付</h2>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {alipayQr || wechatQr ? (
-                <div className="grid grid-cols-2 gap-4">
-                  {alipayQr && (
-                    <div className="text-center">
-                      <img
-                        src={alipayQr}
-                        alt="支付宝收款码"
-                        className="w-full rounded-lg border border-dota-border"
-                      />
-                      <p className="text-xs text-dota-muted mt-2">支付宝</p>
-                    </div>
-                  )}
-                  {wechatQr && (
-                    <div className="text-center">
-                      <img
-                        src={wechatQr}
-                        alt="微信收款码"
-                        className="w-full rounded-lg border border-dota-border"
-                      />
-                      <p className="text-xs text-dota-muted mt-2">微信支付</p>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="border border-dashed border-dota-border rounded-lg p-8 text-center">
-                  <p className="text-sm text-dota-muted">收款码暂未配置</p>
-                  <p className="text-xs text-dota-border mt-1">
-                    管理员可通过环境变量 SPONSOR_ALIPAY_QR / SPONSOR_WECHAT_QR 设置
-                  </p>
-                </div>
-              )}
-              <p className="text-xs text-dota-muted text-center">
-                扫描二维码完成支付后，请在右侧填写赞助信息
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Right: Form */}
+        <div className="max-w-md mx-auto">
           <Card>
             <CardHeader>
               <h2 className="text-sm font-semibold text-dota-text">填写赞助信息</h2>
@@ -254,10 +191,6 @@ export function SponsorClient({ sponsors, stats, alipayQr, wechatQr }: Props) {
                 <Button type="submit" className="w-full" disabled={pending}>
                   {pending ? "提交中..." : `赞助 ¥${displayAmount}`}
                 </Button>
-
-                <p className="text-xs text-dota-muted text-center">
-                  提交后请完成扫码支付，管理员确认后展示
-                </p>
               </form>
             </CardContent>
           </Card>
@@ -308,6 +241,49 @@ export function SponsorClient({ sponsors, stats, alipayQr, wechatQr }: Props) {
           )}
         </div>
       )}
+
+      {/* QR Code Dialog */}
+      <Dialog open={qrOpen} onOpenChange={setQrOpen}>
+        <DialogContent className="text-center">
+          <DialogHeader>
+            <DialogTitle>请扫码支付</DialogTitle>
+            <DialogDescription>
+              支付金额 <span className="text-dota-gold font-semibold">¥{paidAmount}</span>
+            </DialogDescription>
+          </DialogHeader>
+          {alipayQr || wechatQr ? (
+            <div className={`grid ${alipayQr && wechatQr ? "grid-cols-2" : "grid-cols-1"} gap-4 mt-4`}>
+              {alipayQr && (
+                <div className="text-center">
+                  <img
+                    src={alipayQr}
+                    alt="支付宝收款码"
+                    className="w-full rounded-lg border border-dota-border"
+                  />
+                  <p className="text-xs text-dota-muted mt-2">支付宝</p>
+                </div>
+              )}
+              {wechatQr && (
+                <div className="text-center">
+                  <img
+                    src={wechatQr}
+                    alt="微信收款码"
+                    className="w-full rounded-lg border border-dota-border"
+                  />
+                  <p className="text-xs text-dota-muted mt-2">微信支付</p>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="border border-dashed border-dota-border rounded-lg p-8 mt-4">
+              <p className="text-sm text-dota-muted">收款码暂未配置</p>
+            </div>
+          )}
+          <p className="text-xs text-dota-muted mt-4">
+            支付完成后，管理员确认后会展示在赞助墙上
+          </p>
+        </DialogContent>
+      </Dialog>
 
       {/* Why sponsor */}
       <Card className="max-w-2xl mx-auto mt-8">

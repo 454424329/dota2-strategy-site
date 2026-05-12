@@ -1,3 +1,5 @@
+import { cacheGet, cacheSet } from "./cache";
+
 const OPENDOTA_BASE = "https://api.opendota.com/api";
 
 // OpenDota response types
@@ -66,7 +68,7 @@ interface OpenDotaTeam {
 
 type RevalidateOption = number | false;
 
-const FETCH_TIMEOUT = 3000;
+const FETCH_TIMEOUT = 5000;
 
 async function fetchOpenDota<T>(
   path: string,
@@ -101,30 +103,48 @@ async function fetchOpenDota<T>(
   }
 }
 
+// Cached wrapper — cache hits for ttlMs, never caches null
+async function fetchOpenDotaCached<T>(
+  path: string,
+  ttlMs: number = 30 * 60 * 1000,
+): Promise<T | null> {
+  const cacheKey = `opendota:${path}`;
+  const cached = cacheGet<T>(cacheKey);
+  if (cached !== undefined) return cached;
+
+  const result = await fetchOpenDota<T>(path, 3600);
+
+  if (result !== null) {
+    cacheSet(cacheKey, result, ttlMs);
+  }
+
+  return result;
+}
+
 export async function fetchHeroes(): Promise<OpenDotaHero[] | null> {
-  return fetchOpenDota<OpenDotaHero[]>("/heroes");
+  return fetchOpenDotaCached<OpenDotaHero[]>("/heroes", 60 * 60 * 1000);
 }
 
 export async function fetchHeroStats(): Promise<OpenDotaHeroStat[] | null> {
-  return fetchOpenDota<OpenDotaHeroStat[]>("/heroStats");
+  return fetchOpenDotaCached<OpenDotaHeroStat[]>("/heroStats", 30 * 60 * 1000);
 }
 
 export async function fetchHeroMatchups(
   heroId: number,
 ): Promise<OpenDotaMatchup[] | null> {
-  return fetchOpenDota<OpenDotaMatchup[]>(`/heroes/${heroId}/matchups`);
+  return fetchOpenDotaCached<OpenDotaMatchup[]>(`/heroes/${heroId}/matchups`, 2 * 60 * 60 * 1000);
 }
 
 export async function fetchItems(): Promise<Record<string, { id: number; name: string; cost: number; recipe: number }> | null> {
-  return fetchOpenDota("/constants/items");
+  return fetchOpenDotaCached("/constants/items", 24 * 60 * 60 * 1000);
 }
 
 export async function fetchProMatches(): Promise<OpenDotaProMatch[] | null> {
-  return fetchOpenDota<OpenDotaProMatch[]>("/proMatches");
+  return fetchOpenDotaCached<OpenDotaProMatch[]>("/proMatches", 15 * 60 * 1000);
 }
 
 export async function fetchTeams(): Promise<OpenDotaTeam[] | null> {
-  return fetchOpenDota<OpenDotaTeam[]>("/teams");
+  return fetchOpenDotaCached<OpenDotaTeam[]>("/teams", 60 * 60 * 1000);
 }
 
 // ── Esports detail types ──
@@ -192,23 +212,23 @@ interface OpenDotaTeamMember {
 // ── Esports API functions ──
 
 export async function fetchMatchDetail(matchId: number): Promise<OpenDotaMatchDetail | null> {
-  return fetchOpenDota<OpenDotaMatchDetail>(`/matches/${matchId}`);
+  return fetchOpenDotaCached<OpenDotaMatchDetail>(`/matches/${matchId}`, 60 * 60 * 1000);
 }
 
 export async function fetchLeagues(): Promise<OpenDotaLeague[] | null> {
-  return fetchOpenDota<OpenDotaLeague[]>("/leagues");
+  return fetchOpenDotaCached<OpenDotaLeague[]>("/leagues", 60 * 60 * 1000);
 }
 
 export async function fetchTeamMatches(teamId: number): Promise<OpenDotaProMatch[] | null> {
-  return fetchOpenDota<OpenDotaProMatch[]>(`/teams/${teamId}/matches`);
+  return fetchOpenDotaCached<OpenDotaProMatch[]>(`/teams/${teamId}/matches`, 30 * 60 * 1000);
 }
 
 export async function fetchTeamPlayers(teamId: number): Promise<OpenDotaTeamMember[] | null> {
-  return fetchOpenDota<OpenDotaTeamMember[]>(`/teams/${teamId}/players`);
+  return fetchOpenDotaCached<OpenDotaTeamMember[]>(`/teams/${teamId}/players`, 60 * 60 * 1000);
 }
 
 export async function fetchLiveMatches(): Promise<OpenDotaProMatch[] | null> {
-  return fetchOpenDota<OpenDotaProMatch[]>("/live");
+  return fetchOpenDotaCached<OpenDotaProMatch[]>("/live", 5 * 60 * 1000);
 }
 
 export type {

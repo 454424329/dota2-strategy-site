@@ -12,6 +12,7 @@ interface LoginFormProps {
 export function LoginForm({ callbackUrl }: LoginFormProps) {
   const router = useRouter();
   const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -27,6 +28,7 @@ export function LoginForm({ callbackUrl }: LoginFormProps) {
 
     const result = await signIn("credentials", {
       name: name.trim(),
+      password: password || undefined,
       redirect: false,
     });
 
@@ -56,6 +58,18 @@ export function LoginForm({ callbackUrl }: LoginFormProps) {
           onChange={(e) => setName(e.target.value)}
           placeholder="输入你的用户名（2-20个字符）"
           maxLength={20}
+          className="w-full rounded-md border border-dota-border bg-dota-surface px-3 py-2 text-sm text-dota-text placeholder:text-dota-muted focus:outline-none focus:ring-2 focus:ring-dota-accent/50"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-dota-text mb-1">
+          密码 <span className="text-dota-muted font-normal">（仅管理员需要）</span>
+        </label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="普通用户无需填写密码"
           className="w-full rounded-md border border-dota-border bg-dota-surface px-3 py-2 text-sm text-dota-text placeholder:text-dota-muted focus:outline-none focus:ring-2 focus:ring-dota-accent/50"
         />
       </div>

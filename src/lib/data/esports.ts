@@ -6,6 +6,7 @@ import {
 } from "./opendota";
 import { MOCK_TEAMS, MOCK_PRO_MATCHES, MOCK_MATCH_DETAILS, MOCK_LEAGUES } from "./esports-mock";
 import { MOCK_HEROES } from "./heroes-mock";
+import { cacheDelete } from "./cache";
 
 const LEAGUE_TIER_LABELS: Record<string, string> = {
   premier: "顶级",
@@ -218,4 +219,39 @@ export async function getTeamDetail(teamId: number): Promise<{ team: TeamData; r
   const matchData = await fetchTeamMatches(teamId);
   const recentMatches = matchData ? matchData.slice(0, 10).map(mapProMatch) : [];
   return { team, recentMatches };
+}
+
+// Cache refresh helpers — force re-fetch from API, used by periodic refresh
+
+export async function refreshEsportsCache(): Promise<{ matches: boolean; teams: boolean; leagues: boolean }> {
+  const results = { matches: false, teams: false, leagues: false };
+
+  // Invalidate caches then re-fetch
+  cacheDelete("opendota:/proMatches");
+  cacheDelete("opendota:/teams");
+  cacheDelete("opendota:/leagues");
+
+  try {
+    const [matches, teams, leagues] = await Promise.all([
+      fetchProMatches(),
+      fetchTeams(),
+      fetchLeagues(),
+    ]);
+    if (matches && matches.length > 0) {
+      results.matches = true;
+      console.log(`[Cache] Matches refreshed: ${matches.length}`);
+    }
+    if (teams && teams.length > 0) {
+      results.teams = true;
+      console.log(`[Cache] Teams refreshed: ${teams.length}`);
+    }
+    if (leagues && leagues.length > 0) {
+      results.leagues = true;
+      console.log(`[Cache] Leagues refreshed: ${leagues.length}`);
+    }
+  } catch (err) {
+    console.error("[Cache] Esports refresh error:", err);
+  }
+
+  return results;
 }
